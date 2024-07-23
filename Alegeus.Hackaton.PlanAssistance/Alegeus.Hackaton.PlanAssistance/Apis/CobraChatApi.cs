@@ -23,7 +23,7 @@ public static class CobraChatApi
                 [FromBody] ChatDto dto) =>
             {
                 var result = await assistant.ChatWithAssistant(ProductName, AssistantService.HardcodedAdministratorId, dto.Message, planJson);
-                return string.Join(Environment.NewLine, result); // TODO: just last response
+                return result.LastOrDefault(x => !string.IsNullOrWhiteSpace(x)) ?? "No response generated.";
             })
             .WithName("COBRA Admin Plan Chat")
             .WithOpenApi();
@@ -34,7 +34,7 @@ public static class CobraChatApi
                 [FromBody] ChatDto dto) =>
             {
                 var result = await assistant.ChatWithAssistant(ProductName, AssistantService.HardcodedAdministratorId, dto.Message, openEnrollmentJson);
-                return string.Join(Environment.NewLine, result); // TODO: just last response
+                return result.LastOrDefault(x => !string.IsNullOrWhiteSpace(x)) ?? "No response generated.";
             })
             .WithName("COBRA Participant Open Enrollment Chat")
             .WithOpenApi();

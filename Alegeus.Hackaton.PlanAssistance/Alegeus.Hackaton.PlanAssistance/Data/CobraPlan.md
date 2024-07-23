@@ -27,42 +27,28 @@ The `CobraPlan` class contains the plan settings and rates for COBRA and Direct 
 - `EffectiveEndDate`: The latest date this plan can be enrolled in.
 - `IsCobraPlan`: Specifies whether this plan is available to COBRA accounts.
 - `DirectBillTypes`: Describess what direct billing types this plan supports. Direct Bill Types supports the following fields:
-    - TODO
+    - `Name`: The name of the direct billing type.
+    - `BillingPeriodFrequency`: Always monthly. Describes how long a billing cycle lasts.
+    - `Active`: Whether the direct bill type can be used for new benefit accounts.
+    - `GracePeriod`: How long participants have to pay past their due date.
+    - `InitialPaymentPeriod`: The amount of time participants have to submit their first payment to enroll.
+    - `ElectionPeriod`: The amount of time participants have to declare their intent to elect in the plan.
+    - `PremiumDetermination`: Whether premiums are calculated together as a group or different per person.
+    - `UsePlanAdministrationFees`: Whether to apply the fees as described by the parent plan.
 - `RateTableSets`: Groups plan rates together by different dates and rate table types. Rate Table Sets supports the following fields:
-  - `RateTableItems`: Describes a single row in a rate table for a specific premium given a set of criteria about an enrollee. Rate Table Items supports the following fields:
-    - TODO
-
-// TODO: Write markdown for DTOs
-using Alegeus.Models;
-
-namespace Alegeus.Hackaton.PlanAssistance.Models;
-
-public record DirectBillTypeDto(
-    string Name,
-    BillingPeriodFrequencyEnum BillingPeriodFrequency,
-    bool Active,
-    int GracePeriod,
-    int InitialPaymentPeriod,
-    int ElectionPeriod,
-    PremiumDeterminationEnum PremiumDetermination,
-    bool UsePlanAdministrationFees);
-
-public record RateTableSetDto(
-    RateTableTypeEnum RateTableType,
-    DateTime EffectiveStartDate,
-    DateTime EffectiveEndDate,
-    bool Approved,
-    UnitDemographicTypeEnum DemographicToUse,
-    List<RateTableItemDto> Rates);
-
-public record RateTableItemDto(
-    string Location,
-    CoverageTierEnum? CoverageTier,
-    SmokingEnum? Smoking,
-    GenderEnum? Gender,
-    RelationshipEnum? Relationship,
-    decimal Premium,
-    int? AgeMinimum,
-    int? AgeMaximum,
-    int? SpouseAgeMinimum,
-    int? SpouseAgeMaximum);
+    - `RateTableType`: What type of rate table this is.
+    - `EffectiveStartDate`: The earliest date with which a participant could get these rate.
+    - `EffectiveEndDate`: The latest date with which a participant could get these rate.
+    - `Approved`: Whether the rate has been approved for participants to get these rate.
+    - `DemographicToUse`: Whether the primary participant's demographic information is supposed to be used to determine rates, or it should use the actual enrolling participant's demographic information.
+    - `RateTableItems`: Describes a single row in a rate table for a specific premium given a set of criteria about an enrollee. Rate Table Items supports the following fields:
+        - `Location`: The location with which this rate applies.
+        - `CoverageTier`: The coverage tier this rate applies.
+        - `Smoking`: The participant's smoking habits this rate applies to.
+        - `Gender`: What genders this rate applies to.
+        - `Relationship`: What relationship to the primary participant can get this rate.
+        - `Premium`: What is the rate.
+        - `AgeMinimum`: The youngest a participant can be for this rate.
+        - `AgeMaximum`: The oldest a participant can be for this rate.
+        - `SpouseAgeMinimum`: The youngest a spouse can be for this rate.
+        - `SpouseAgeMaximum`: The oldest a spouse can be for this rate.

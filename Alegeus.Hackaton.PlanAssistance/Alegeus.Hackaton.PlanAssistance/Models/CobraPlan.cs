@@ -23,7 +23,7 @@ public record PlanDto(
     LossOfCoverageDetermination LossOfCoverageDetermination,
     ProrationDeterminationEnum ProrationDetermination,
     DateTime EffectiveStartDate,
-    DateTime EffectiveEndDate,
+    DateTime? EffectiveEndDate,
     bool IsCobraPlan,
     List<DirectBillTypeDto> DirectBillTypes,
     List<RateTableSetDto> RateTableSets);

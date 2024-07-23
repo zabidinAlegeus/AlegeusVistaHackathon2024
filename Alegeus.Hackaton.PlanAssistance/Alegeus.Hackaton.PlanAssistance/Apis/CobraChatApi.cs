@@ -8,7 +8,7 @@ namespace Alegeus.Hackaton.PlanAssistance.Apis;
 
 public static class CobraChatApi
 {
-    private const string ProductName = "Cobra";
+    public const string ProductName = "Cobra";
 
     public static async Task AddCobraChats(this WebApplication app)
     {
@@ -69,7 +69,7 @@ public static class CobraChatApi
         //            new(guid2, new("Benson", "Sammy", "", "", "", new(2015, 1, 5), GenderEnum.Male, null), true)
         //        },
         //        [
-        //            new(new(0m, "", null, 0m), true, [guid1, guid2])
+        //            new(testPlan, new(0m, "", null, 0m), true, [guid1, guid2])
         //        ],
         //        new()));
 
@@ -85,6 +85,21 @@ public static class CobraChatApi
         //    new JsonSerializerOptions { WriteIndented = true, Converters = { new JsonStringEnumConverter() } });
 
         //var json2 = JsonSerializer.Serialize(coverage,
+        //    new JsonSerializerOptions { WriteIndented = true, Converters = { new JsonStringEnumConverter() } });
+
+        //var avail = new AvailablePlanDto(
+        //    new Guid("90a7fb8d-a286-449b-af26-64c9f8277646"),
+        //    "Aetna",
+        //    "Standard",
+        //    BenefitType.Medical,
+        //    [
+        //        new("", CoverageTierEnum.Ee, null, null, null, 663.00m, null, null, null, null),
+        //        new("", CoverageTierEnum.EePlusSpouse, null, null, null, 1312.75m, null, null, null, null),
+        //        new("", CoverageTierEnum.EePlusChildren, null, null, null, 1253.08m, null, null, null, null),
+        //        new("", CoverageTierEnum.EePlusFamily, null, null, null, 1902.83m, null, null, null, null)
+        //    ]);
+
+        //var json3 = JsonSerializer.Serialize(avail,
         //    new JsonSerializerOptions { WriteIndented = true, Converters = { new JsonStringEnumConverter() } });
 
         var planJson = await File.ReadAllTextAsync(".\\Data\\CobraPlan.json");

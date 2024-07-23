@@ -3,7 +3,7 @@
 namespace Alegeus.Hackaton.PlanAssistance.Models;
 
 public record OpenEnrollmentDto(
-    List<PlanDto> AvailablePlans,
+    List<AvailablePlanDto> AvailablePlans,
     CoverageDto Coverage);
 
 public record CoverageDto(
@@ -28,6 +28,7 @@ public record CoverageWindowDto(
 public record DependentDto(Guid DependentId, DemographicsDto Demographics, bool IsActive);
 
 public record InitialElectablePlanDto(
+    PlanDto Plan,
     PremiumFactorsDto PremiumFactors,
     bool DoesCoverPrimaryParticipant,
     List<Guid> CoveredDependentIds);
@@ -39,9 +40,9 @@ public record PremiumFactorsDto(
     decimal CoverageAmount);
 
 public record ElectedPlanDto(
+    PlanDto Plan,
     DateTime StartDate,
     DateTime EndDate,
-    Guid PlanId,
     PremiumFactorsDto PremiumFactors,
     bool DoesCoverPrimaryParticipant,
     List<Guid> CoveredDependentIds);

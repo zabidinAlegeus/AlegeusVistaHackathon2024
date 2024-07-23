@@ -1,5 +1,7 @@
 {
   "PlanId": "b489e8c5-2c04-4220-8a63-c8459af8861c",
+  "NumberOfAccounts" 538,
+  "ElectedParticipantCount": 1207,
   "Employer": {
     "Name": "Walmart"
   },

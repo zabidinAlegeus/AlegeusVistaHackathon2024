@@ -1,5 +1,62 @@
 {
-  "AvailablePlans": [],
+  "AvailablePlans": [
+    {
+      "PlanId": "90a7fb8d-a286-449b-af26-64c9f8277646",
+      "CarrierName": "Aetna",
+      "PlanName": "Standard",
+      "BenefitType": "Medical",
+      "Items": [
+        {
+          "Location": "",
+          "CoverageTier": "Ee",
+          "Smoking": null,
+          "Gender": null,
+          "Relationship": null,
+          "Premium": 663.00,
+          "AgeMinimum": null,
+          "AgeMaximum": null,
+          "SpouseAgeMinimum": null,
+          "SpouseAgeMaximum": null
+        },
+        {
+          "Location": "",
+          "CoverageTier": "EePlusSpouse",
+          "Smoking": null,
+          "Gender": null,
+          "Relationship": null,
+          "Premium": 1312.75,
+          "AgeMinimum": null,
+          "AgeMaximum": null,
+          "SpouseAgeMinimum": null,
+          "SpouseAgeMaximum": null
+        },
+        {
+          "Location": "",
+          "CoverageTier": "EePlusChildren",
+          "Smoking": null,
+          "Gender": null,
+          "Relationship": null,
+          "Premium": 1253.08,
+          "AgeMinimum": null,
+          "AgeMaximum": null,
+          "SpouseAgeMinimum": null,
+          "SpouseAgeMaximum": null
+        },
+        {
+          "Location": "",
+          "CoverageTier": "EePlusFamily",
+          "Smoking": null,
+          "Gender": null,
+          "Relationship": null,
+          "Premium": 1902.83,
+          "AgeMinimum": null,
+          "AgeMaximum": null,
+          "SpouseAgeMinimum": null,
+          "SpouseAgeMaximum": null
+        }
+      ]
+    }
+  ],
   "Coverage": {
     "Cobra": {
       "QualifyingEventType": {
@@ -33,7 +90,7 @@
     ],
     "Dependents": [
       {
-        "DependentId": "2dfd9239-1412-4c7e-8147-8125acfd5c85",
+        "DependentId": "1f3a73b3-59ca-42a0-9a41-46aa5de03169",
         "Demographics": {
           "LastName": "Benson",
           "FirstName": "Marsha",
@@ -47,7 +104,7 @@
         "IsActive": true
       },
       {
-        "DependentId": "e5f99672-0d67-4c54-8d89-6d8ea1791001",
+        "DependentId": "56532d85-3bed-4d94-af86-a86f80595a12",
         "Demographics": {
           "LastName": "Benson",
           "FirstName": "Sammy",
@@ -63,6 +120,56 @@
     ],
     "InitialElectablePlans": [
       {
+        "Plan": {
+          "PlanId": "90a7fb8d-a286-449b-af26-64c9f8277646",
+          "Employer": {
+            "Name": "Walmart"
+          },
+          "CarrierName": "Aetna",
+          "PlanName": "Standard",
+          "BenefitType": "Medical",
+          "CarrierAdminFeePercentage": 0,
+          "CarrierAdminFee": 0,
+          "DisabilityExtensionCarrierAdminFee": 0,
+          "DisabilityExtensionCarrierAdminFeePercentage": 0,
+          "DisabilityExtensionEmployerAdminFee": 0,
+          "DisabilityExtensionTpaAdminFeePercentage": 2,
+          "EmployerAdminFee": 0,
+          "EmployerAdminFeePercentage": 0,
+          "StartOfPlanYearDay": 1,
+          "StartOfPlanYearMonth": 12,
+          "TpaAdminFee": 0,
+          "TpaAdminFeePercentage": 2,
+          "LossOfCoverageDetermination": "EndOfMonth",
+          "ProrationDetermination": "NumberOfDaysInMonth",
+          "EffectiveStartDate": "2020-01-01T00:00:00",
+          "EffectiveEndDate": null,
+          "IsCobraPlan": true,
+          "DirectBillTypes": [],
+          "RateTableSets": [
+            {
+              "RateTableType": "Composite",
+              "EffectiveStartDate": "2023-12-01T00:00:00",
+              "EffectiveEndDate": "2024-11-30T00:00:00",
+              "Approved": true,
+              "DemographicToUse": "Member",
+              "Rates": [
+                {
+                  "Location": "",
+                  "CoverageTier": "EePlusFamily",
+                  "Smoking": null,
+                  "Gender": null,
+                  "Relationship": null,
+                  "Premium": 1902.83,
+                  "AgeMinimum": null,
+                  "AgeMaximum": null,
+                  "SpouseAgeMinimum": null,
+                  "SpouseAgeMaximum": null
+                }
+              ]
+            }
+          ]
+        },
         "PremiumFactors": {
           "Contribution": 0,
           "Location": "",
@@ -71,8 +178,8 @@
         },
         "DoesCoverPrimaryParticipant": true,
         "CoveredDependentIds": [
-          "2dfd9239-1412-4c7e-8147-8125acfd5c85",
-          "e5f99672-0d67-4c54-8d89-6d8ea1791001"
+          "1f3a73b3-59ca-42a0-9a41-46aa5de03169",
+          "56532d85-3bed-4d94-af86-a86f80595a12"
         ]
       }
     ],

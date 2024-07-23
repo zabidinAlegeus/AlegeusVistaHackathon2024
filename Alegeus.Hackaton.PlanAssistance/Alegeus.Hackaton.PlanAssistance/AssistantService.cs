@@ -3,6 +3,7 @@
 using Azure;
 using Azure.AI.OpenAI.Assistants;
 using Microsoft.Extensions.Caching.Memory;
+using OpenAI.Files;
 
 public class AssistantService(IMemoryCache cache)
 {
@@ -13,7 +14,7 @@ public class AssistantService(IMemoryCache cache)
     {
         var result = new List<string>();
 
-        query = $"{planJson} {query}";
+        //query = $"{planJson} {query}";
 
         var endpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT") ?? throw new ArgumentNullException("AZURE_OPENAI_ENDPOINT");
         var key = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY") ?? throw new ArgumentNullException("AZURE_OPENAI_API_KEY");
@@ -62,6 +63,17 @@ public class AssistantService(IMemoryCache cache)
                     Console.Write(textItem.Text);
                     result.Add(textItem.Text);
                 }
+
+                if (contentItem is MessageImageFileContent imageFileContent)
+                {
+                    var imageInfo = await client.GetFileAsync(imageFileContent.FileId);
+                    BinaryData imageBytes = await client.GetFileContentAsync(imageFileContent.FileId);
+                    using FileStream stream = File.OpenWrite($"{imageInfo.Value.Filename}.png");
+                    imageBytes.ToStream().CopyTo(stream);
+                    result.Add($"<image: {imageInfo.Value.Filename}.png>");
+                    Console.WriteLine($"<image: {imageInfo.Value.Filename}.png>");
+                }
+
                 Console.WriteLine();
                 result.Add("\r\n");
             }

@@ -10,7 +10,7 @@ public static class WcaChatApi
 
     public static async Task AddChat(this WebApplication app)
     {
-        var planJson = await File.ReadAllTextAsync(".\\Data\\WCABenefitPlan.json");;
+        var planJson = await File.ReadAllTextAsync(".\\Data\\WCABenefitPlan.json");
 
         app.MapPost("/wca-chat", async (
                 [FromServices] AssistantService assistant,

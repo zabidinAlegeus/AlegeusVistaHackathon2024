@@ -6,6 +6,7 @@ using Azure;
 using Azure.AI.OpenAI.Assistants;
 using Microsoft.Extensions.Caching.Memory;
 using OpenAI.Files;
+using System.Text;
 using System.Web;
 
 public class AssistantService(IMemoryCache cache)
@@ -13,12 +14,20 @@ public class AssistantService(IMemoryCache cache)
     private const string CachePrefix = "PlanAssistant-";
     public const string HardcodedAdministratorId = "tpa001";
 
-    public async Task<IList<string>> ChatWithAssistant(string product, string administratorId, string query, string planJson)
+    public async Task<IList<string>> ChatWithAssistant(string product, string administratorId, string query, params string[] dataFiles)
     {
         var result = new List<string>();
 
-        if (product == CobraChatApi.ProductName)
-            query = $"{planJson} {query}";
+        //if (product == CobraChatApi.ProductName)
+        //    query = $"{planJson} {query}";
+
+        var sb = new StringBuilder();
+        foreach (var dataFile in dataFiles)
+        {
+            sb.Append($"{dataFile} ");
+        }
+        sb.Append(query);
+        //query = $"{query}";
 
         var endpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT") ?? throw new ArgumentNullException("AZURE_OPENAI_ENDPOINT");
         var key = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY") ?? throw new ArgumentNullException("AZURE_OPENAI_API_KEY");
@@ -35,7 +44,7 @@ public class AssistantService(IMemoryCache cache)
         var message = await client.CreateMessageAsync(
             threadId,
             MessageRole.User,
-            query);
+            sb.ToString());
 
         // Run the thread
         ThreadRun run = await client.CreateRunAsync(

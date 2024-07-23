@@ -6,9 +6,10 @@ public static class ChatApi
 {
     public static void AddChat(this WebApplication app)
     {
-        app.MapPost("/chat", ([FromBody]string query) =>
+        app.MapPost("/chat", async ([FromBody]string query) =>
         {
-            var result = "hi!";
+            var assistantService = new AssistantService();
+            var result = await assistantService.ChatWithAssistant(query);
             return result;
         })
             .WithName("Chat")

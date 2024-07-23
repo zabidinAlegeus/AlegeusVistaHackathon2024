@@ -5,7 +5,7 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alegeus.Hackaton.PlanAssistance", "Alegeus.Hackaton.PlanAssistance\Alegeus.Hackaton.PlanAssistance.csproj", "{0F8AC8E7-0CE3-4080-8B68-5509E1696D6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alegeus.Models", "Alegeus.Models\Alegeus.Models.csproj", "{B9039907-2A1F-42C3-AE6D-E10C371102DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alegeus.Models", "Alegeus.Models\Alegeus.Models.csproj", "{B9039907-2A1F-42C3-AE6D-E10C371102DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

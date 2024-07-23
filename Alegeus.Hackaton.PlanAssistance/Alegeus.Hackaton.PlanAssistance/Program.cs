@@ -20,6 +20,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.AddChat();
 app.AddChatHub();
 app.AddChat();
 app.Run();

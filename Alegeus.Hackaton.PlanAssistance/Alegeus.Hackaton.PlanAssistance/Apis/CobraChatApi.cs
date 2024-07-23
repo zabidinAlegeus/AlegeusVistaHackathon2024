@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Alegeus.Hackaton.PlanAssistance.Models;
+using Alegeus.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Alegeus.Hackaton.PlanAssistance.Apis;
 
@@ -8,6 +12,48 @@ public static class CobraChatApi
 
     public static async Task AddCobraChats(this WebApplication app)
     {
+        //var testPlan = new PlanDto(
+        //    Guid.NewGuid(),
+        //    new("Walmart"),
+        //    "Aetna",
+        //    "Standard",
+        //    BenefitType.Medical,
+        //    0m,
+        //    0m,
+        //    0m,
+        //    0m,
+        //    0m,
+        //    2m,
+        //    0m,
+        //    0m,
+        //    1,
+        //    12,
+        //    0m,
+        //    2m,
+        //    LossOfCoverageDetermination.EndOfMonth,
+        //    ProrationDeterminationEnum.NumberOfDaysInMonth,
+        //    new DateTime(2020, 1, 1),
+        //    null,
+        //    true,
+        //    [],
+        //    [
+        //        new(
+        //            RateTableTypeEnum.Composite,
+        //            new DateTime(2023, 12, 1),
+        //            new DateTime(2024, 11, 30),
+        //            true,
+        //            UnitDemographicTypeEnum.Member,
+        //            [
+        //                new("", CoverageTierEnum.Ee, null, null, null, 663.00m, null, null, null, null),
+        //                new("", CoverageTierEnum.EePlusSpouse, null, null, null, 1312.75m, null, null, null, null),
+        //                new("", CoverageTierEnum.EePlusChildren, null, null, null, 1253.08m, null, null, null, null),
+        //                new("", CoverageTierEnum.EePlusFamily, null, null, null, 1902.83m, null, null, null, null),
+        //            ])
+        //    ]);
+
+        //var json1 = JsonSerializer.Serialize(testPlan,
+        //    new JsonSerializerOptions { WriteIndented = true, Converters = { new JsonStringEnumConverter() } });
+
         //var plan = new Fixture().Create<PlanDto>();
         //var coverage = new Fixture().Create<CoverageDto>();
 

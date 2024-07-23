@@ -1,16 +1,15 @@
 .chatbot {
     height: 65vh;
     margin-bottom: 1.5rem;
+    overflow-y: scroll;
 }
 
 .question{
-    margin-left: 2vh;
     max-width: fit-content;
-    display: flex;
+    margin: 1rem;
 }
 
 .response{
-    margin-right: 2vh;
     max-width: fit-content;
-    display: flex;
+    margin-left: 7vh;
 }

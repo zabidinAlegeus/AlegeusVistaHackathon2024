@@ -4,13 +4,22 @@
             <div class="col">
                 <mat-chip-listbox *ngIf="chatEntries.length > 0">
                     <div *ngFor="let chatEntry of chatEntries">
-                        <mat-chip class="question" *ngIf="chatEntry.question != ''">{{chatEntry.question}}</mat-chip>
-                        <mat-chip class="response">{{chatEntry.response}}</mat-chip>
+                        <mat-card [ngStyle]="{'background-color': '#03d3fc'}" class="question"
+                            *ngIf="chatEntry.question != ''">
+                            <mat-card-content>
+                                {{chatEntry.question}}
+                            </mat-card-content>
+                        </mat-card>
+                        <mat-card [ngStyle]="{'background-color': '#fcfceb'}" class="response">
+                            <mat-card-content>
+                                {{chatEntry.response}}
+                            </mat-card-content>
+                        </mat-card>
                     </div>
                     <div *ngIf="showSpinner">
                         Loading response...
                         <mat-spinner diameter="30"></mat-spinner>
-                    </div>                    
+                    </div>
                 </mat-chip-listbox>
             </div>
         </div>

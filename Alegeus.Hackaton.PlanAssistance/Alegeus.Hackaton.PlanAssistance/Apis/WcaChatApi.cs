@@ -17,7 +17,7 @@ public static class WcaChatApi
                 [FromBody] ChatDto dto) =>
         {
             var result = await assistant.ChatWithAssistant(ProductName, AssistantService.HardcodedAdministratorId, dto.Message, planJson);
-            return string.Join(Environment.NewLine, result); // TODO: just last response
+            return result.LastOrDefault(x => !string.IsNullOrWhiteSpace(x)) ?? "No response generated.";
         })
         .WithName("WCA Chat")
         .WithOpenApi();

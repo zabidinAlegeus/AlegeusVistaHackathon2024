@@ -1,0 +1,28 @@
+[
+  {
+    "AdminId": "T01271",
+    "EmployerId": "RSCWCCER1",
+    "EmployerName": "ABC Corp",
+    "Address1": "123 Main St",
+    "Address2": "Suite 200",
+    "City": "Anytown",
+    "State": "CA",
+    "Zipcode": "12345",
+    "Phone": "555-123-4567",
+    "Email": "info@abccorp.com",
+    "BenefitPlanKeys": [ 114 ]
+  },
+  {
+    "AdminId": "T01271",
+    "EmployerId": "ZAWCCER1",
+    "EmployerName": "Lavender Town Corp",
+    "Address1": "123 Sesame St",
+    "Address2": "Suite 200",
+    "City": "Waltham",
+    "State": "MA",
+    "Zipcode": "12345",
+    "Phone": "555-123-4567",
+    "Email": "info@abccorp.com",
+    "BenefitPlanKeys": [ 115, 114 ]
+  }
+]

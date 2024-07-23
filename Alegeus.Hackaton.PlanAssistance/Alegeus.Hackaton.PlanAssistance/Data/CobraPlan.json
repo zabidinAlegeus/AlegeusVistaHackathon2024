@@ -1,0 +1,280 @@
+{
+  "PlanId": "ba369155-9f16-4cff-a81f-ae4c09857f92",
+  "Employer": {
+    "Name": "Name968b4c92-92c5-445a-bf64-365c4ca36675"
+  },
+  "CarrierName": "CarrierName190de529-6bf1-4d84-92aa-ff4dc00f6298",
+  "PlanName": "PlanName8c6fdd05-1325-4ad9-80bf-76672c1bc6c5",
+  "BenefitType": "Dental",
+  "GroupNumber": "GroupNumber696cb4eb-4005-4b4a-b841-9b852810f212",
+  "BillingDueDateOfMonth": 31257,
+  "CarrierAdminFeePercentage": 7723,
+  "CarrierAdminFee": 7909,
+  "DisabilityExtensionCarrierAdminFee": 13322,
+  "DisabilityExtensionCarrierAdminFeePercentage": 4773,
+  "DisabilityExtensionEmployerAdminFee": 31341,
+  "DisabilityExtensionTpaAdminFeePercentage": 20467,
+  "EmployerAdminFee": 23708,
+  "EmployerAdminFeePercentage": 21907,
+  "StartOfPlanYearDay": 21220,
+  "StartOfPlanYearMonth": 18349,
+  "TpaAdminFee": 23140,
+  "TpaAdminFeePercentage": 3486,
+  "MaxChildAgeForChildrenCharged": 9226,
+  "MaxChildrenCharged": 17294,
+  "PremiumDisbursedToCarrier": true,
+  "AgeDeterminationType": "BillingDueDate",
+  "LossOfCoverageDetermination": "EndOfMonth",
+  "ProrationDetermination": "ThirtyDaysInEachMonth",
+  "EffectiveStartDate": "2026-03-31T14:32:37.7426559",
+  "EffectiveEndDate": "2023-04-29T10:22:04.6352495",
+  "HasDefaultEmployeeGroup": false,
+  "SelfInsured": true,
+  "HasCobraDirectBillType": false,
+  "DirectBillTypes": [
+    {
+      "Name": "Named95c7443-bd1c-4e39-8744-d7b14d3548e3",
+      "BillingPeriodFrequency": "Monthly",
+      "Active": true,
+      "GracePeriod": 28041,
+      "InitialPaymentPeriod": 3429,
+      "ElectionPeriod": 32314,
+      "TerminateAfterLastDayToPayOrElect": false,
+      "AutoEnrolled": true,
+      "PremiumDetermination": "IndividuallyRated",
+      "UsePlanAdministrationFees": false
+    },
+    {
+      "Name": "Name6bb7acc7-03a9-44c8-b54e-80acb87ee3a3",
+      "BillingPeriodFrequency": "Monthly",
+      "Active": true,
+      "GracePeriod": 22249,
+      "InitialPaymentPeriod": 30721,
+      "ElectionPeriod": 29335,
+      "TerminateAfterLastDayToPayOrElect": false,
+      "AutoEnrolled": true,
+      "PremiumDetermination": "IndividuallyRated",
+      "UsePlanAdministrationFees": false
+    },
+    {
+      "Name": "Name24da0e4b-354b-4531-bf67-e9efc6b02670",
+      "BillingPeriodFrequency": "Monthly",
+      "Active": true,
+      "GracePeriod": 10341,
+      "InitialPaymentPeriod": 27289,
+      "ElectionPeriod": 27751,
+      "TerminateAfterLastDayToPayOrElect": false,
+      "AutoEnrolled": true,
+      "PremiumDetermination": "IndividuallyRated",
+      "UsePlanAdministrationFees": false
+    }
+  ],
+  "LossOfCoverageDayOfMonth": 13679,
+  "CommunicationType": "Edi834",
+  "PaidThroughDateChangesInEnrollmentCommunications": "PaidThroughDateInCommEnumForceInclude",
+  "PlanOverrides": [
+    {
+      "QualifyingEventTypeId": {
+        "QualifyingEventName": "QualifyingEventNamefa4df206-4726-4721-a079-1ed4700e4cb3",
+        "EffectiveStartDate": "2026-01-17T06:55:05.4881838",
+        "EffectiveEndDate": "2023-07-08T08:15:07.4727896",
+        "MaxMonthCoveragePeriod": 1465,
+        "DisabledMaxMonthCoveragePeriod": 15933,
+        "QualifyingBeneficiaryUnit": "RetireeSpouseAndDependents"
+      },
+      "LossOfCoverageDetermination": "RollRoll",
+      "LossOfCoverageDayOfMonth": 13114
+    },
+    {
+      "QualifyingEventTypeId": {
+        "QualifyingEventName": "QualifyingEventName91b440cb-69bf-4524-855c-118cc1373f51",
+        "EffectiveStartDate": "2024-07-29T14:47:09.7445851",
+        "EffectiveEndDate": "2024-11-01T00:35:31.9254911",
+        "MaxMonthCoveragePeriod": 29581,
+        "DisabledMaxMonthCoveragePeriod": 3689,
+        "QualifyingBeneficiaryUnit": "RetireeSpouseAndDependents"
+      },
+      "LossOfCoverageDetermination": "EndOfNextMonth",
+      "LossOfCoverageDayOfMonth": 1967
+    },
+    {
+      "QualifyingEventTypeId": {
+        "QualifyingEventName": "QualifyingEventName8624d46d-2e8f-4a6c-ad6c-fc62b1d456d8",
+        "EffectiveStartDate": "2025-05-14T02:14:35.727086",
+        "EffectiveEndDate": "2025-06-17T17:44:07.8934284",
+        "MaxMonthCoveragePeriod": 17378,
+        "DisabledMaxMonthCoveragePeriod": 7480,
+        "QualifyingBeneficiaryUnit": "RetireeSpouseAndDependents"
+      },
+      "LossOfCoverageDetermination": "EndOfMonth",
+      "LossOfCoverageDayOfMonth": 5972
+    }
+  ],
+  "RateTableSets": [
+    {
+      "RateTableType": "MemberLevel",
+      "EffectiveStartDate": "2025-06-05T09:43:00.2383198",
+      "EffectiveEndDate": "2023-05-10T19:25:22.4540041",
+      "Approved": false,
+      "DemographicToUse": "PrimaryParticipant",
+      "MinUnits": 5432,
+      "MaxUnits": 16435,
+      "UnitIncrement": 6946,
+      "UnitDetermination": "Increment",
+      "DollarsPerUnit": 2311,
+      "EmployeeGroupNames": [
+        "6d5d5205-2e27-4cc0-9094-22943ccc156d",
+        "b6f1d599-b64f-42aa-8c33-20391a98067b",
+        "28ce2188-94af-4668-93db-a7f7a0485d63"
+      ],
+      "Rates": [
+        {
+          "Location": "Locationd826ad5f-f9c2-4a8d-bbe8-5fb4941360e9",
+          "CoverageTier": "EePlusChild",
+          "Smoking": "TwoOrMoreSmoker",
+          "Gender": "Female",
+          "Relationship": "FirstChild",
+          "Premium": 27398,
+          "AgeMinimum": 25829,
+          "AgeMaximum": 7133,
+          "SpouseAgeMinimum": 15126,
+          "SpouseAgeMaximum": 15466
+        },
+        {
+          "Location": "Locationc3d8b523-b156-4ccf-9e8f-f8bb75e68292",
+          "CoverageTier": "EePlusChildOrChildren",
+          "Smoking": "Smoking",
+          "Gender": "Male",
+          "Relationship": "ThirdChild",
+          "Premium": 7366,
+          "AgeMinimum": 11202,
+          "AgeMaximum": 10264,
+          "SpouseAgeMinimum": 10749,
+          "SpouseAgeMaximum": 2419
+        },
+        {
+          "Location": "Location6550e175-fa3c-495c-b815-f7165b50d255",
+          "CoverageTier": "EePlusOneDependent",
+          "Smoking": "TwoOrMoreSmoker",
+          "Gender": "SomethingElse",
+          "Relationship": "FourthOrGreaterChild",
+          "Premium": 30158,
+          "AgeMinimum": 11470,
+          "AgeMaximum": 29946,
+          "SpouseAgeMinimum": 29283,
+          "SpouseAgeMaximum": 6895
+        }
+      ]
+    },
+    {
+      "RateTableType": "Composite",
+      "EffectiveStartDate": "2024-11-26T00:18:56.1117342",
+      "EffectiveEndDate": "2024-01-28T19:42:03.6962875",
+      "Approved": false,
+      "DemographicToUse": "PrimaryParticipant",
+      "MinUnits": 14581,
+      "MaxUnits": 4081,
+      "UnitIncrement": 4246,
+      "UnitDetermination": "Increment",
+      "DollarsPerUnit": 19075,
+      "EmployeeGroupNames": [
+        "0cbb61e1-7368-4b00-8cbd-5a02af404c69",
+        "a7cdda4b-93cc-49f1-b2d5-6abd1f43f1ba",
+        "ac0d350d-a1f1-466d-b4df-4fb2302bd206"
+      ],
+      "Rates": [
+        {
+          "Location": "Locationa55835e7-78d2-4126-89fd-df0d10863bf5",
+          "CoverageTier": "ChildOnly",
+          "Smoking": "TwoOrMoreSmoker",
+          "Gender": "Female",
+          "Relationship": "FourthOrGreaterChild",
+          "Premium": 4985,
+          "AgeMinimum": 28081,
+          "AgeMaximum": 11218,
+          "SpouseAgeMinimum": 23050,
+          "SpouseAgeMaximum": 27275
+        },
+        {
+          "Location": "Location410a69ee-4ea2-480f-8ec6-9f803fa30fe8",
+          "CoverageTier": "ChildOrChildrenOnly",
+          "Smoking": "Smoking",
+          "Gender": "Male",
+          "Relationship": "Spouse",
+          "Premium": 12993,
+          "AgeMinimum": 4640,
+          "AgeMaximum": 24889,
+          "SpouseAgeMinimum": 17357,
+          "SpouseAgeMaximum": 11897
+        },
+        {
+          "Location": "Locationb529ea33-d740-44c2-882b-67c42836c4fd",
+          "CoverageTier": "EePlusTwoChildren",
+          "Smoking": "TwoOrMoreSmoker",
+          "Gender": "SomethingElse",
+          "Relationship": "FirstChild",
+          "Premium": 12953,
+          "AgeMinimum": 15602,
+          "AgeMaximum": 15039,
+          "SpouseAgeMinimum": 30657,
+          "SpouseAgeMaximum": 25938
+        }
+      ]
+    },
+    {
+      "RateTableType": "UnitBased",
+      "EffectiveStartDate": "2024-08-14T02:53:34.5803621",
+      "EffectiveEndDate": "2026-03-08T05:34:24.9787622",
+      "Approved": false,
+      "DemographicToUse": "PrimaryParticipant",
+      "MinUnits": 19413,
+      "MaxUnits": 31887,
+      "UnitIncrement": 32593,
+      "UnitDetermination": "Increment",
+      "DollarsPerUnit": 30135,
+      "EmployeeGroupNames": [
+        "012a1286-4ac3-4fc2-b6f9-62e4a45f25e8",
+        "c3215a7d-54cd-46e0-a287-25131f6e1cc7",
+        "8b8726b0-7605-4ff3-8416-16d25fcaf4f9"
+      ],
+      "Rates": [
+        {
+          "Location": "Locationc33c74e1-c484-4c0d-81af-b15b609e5a6d",
+          "CoverageTier": "ThreeChildren",
+          "Smoking": "TwoOrMoreSmoker",
+          "Gender": "Female",
+          "Relationship": "FirstChild",
+          "Premium": 9466,
+          "AgeMinimum": 1698,
+          "AgeMaximum": 17185,
+          "SpouseAgeMinimum": 30960,
+          "SpouseAgeMaximum": 12454
+        },
+        {
+          "Location": "Locationf4858452-011d-43bd-aee7-67ff4a033711",
+          "CoverageTier": "ThreeOrMoreChildren",
+          "Smoking": "Smoking",
+          "Gender": "Male",
+          "Relationship": "ThirdChild",
+          "Premium": 5503,
+          "AgeMinimum": 23162,
+          "AgeMaximum": 22954,
+          "SpouseAgeMinimum": 11161,
+          "SpouseAgeMaximum": 4037
+        },
+        {
+          "Location": "Location7a54cfa5-fd11-421a-9122-b14d82c3877f",
+          "CoverageTier": "EePlusSpousePlusChild",
+          "Smoking": "TwoOrMoreSmoker",
+          "Gender": "SomethingElse",
+          "Relationship": "FourthOrGreaterChild",
+          "Premium": 17194,
+          "AgeMinimum": 28450,
+          "AgeMaximum": 20948,
+          "SpouseAgeMinimum": 10902,
+          "SpouseAgeMaximum": 17368
+        }
+      ]
+    }
+  ]
+}

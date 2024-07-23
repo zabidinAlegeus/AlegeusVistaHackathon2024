@@ -1,5 +1,6 @@
 using Alegeus.Hackaton.PlanAssistance;
 using Alegeus.Hackaton.PlanAssistance.Apis;
+using Microsoft.Extensions.Caching.Memory;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,8 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSignalR();
-builder.Services.AddSingleton(new AssistantService());
-
+builder.Services.AddMemoryCache();
+builder.Services.AddSingleton(sp => 
+    new AssistantService(sp.GetRequiredService<IMemoryCache>()));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -20,7 +22,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.AddChat();
+await app.AddChat();
 app.AddChatHub();
-app.AddChat();
+await app.AddCobraChat();
 app.Run();

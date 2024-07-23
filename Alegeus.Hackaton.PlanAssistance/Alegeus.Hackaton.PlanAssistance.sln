@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alegeus.Hackaton.PlanAssist
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alegeus.Models", "Alegeus.Models\Alegeus.Models.csproj", "{B9039907-2A1F-42C3-AE6D-E10C371102DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestChatClient", "TestChatClient\TestChatClient.csproj", "{520D6F71-4EA8-4B37-8833-3476B6619D85}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{0F8AC8E7-0CE3-4080-8B68-5509E1696D6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F8AC8E7-0CE3-4080-8B68-5509E1696D6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F8AC8E7-0CE3-4080-8B68-5509E1696D6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{520D6F71-4EA8-4B37-8833-3476B6619D85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{520D6F71-4EA8-4B37-8833-3476B6619D85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{520D6F71-4EA8-4B37-8833-3476B6619D85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{520D6F71-4EA8-4B37-8833-3476B6619D85}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B9039907-2A1F-42C3-AE6D-E10C371102DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B9039907-2A1F-42C3-AE6D-E10C371102DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9039907-2A1F-42C3-AE6D-E10C371102DC}.Release|Any CPU.ActiveCfg = Release|Any CPU

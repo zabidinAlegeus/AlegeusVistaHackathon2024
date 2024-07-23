@@ -1,3 +1,4 @@
+using Alegeus.Hackaton.PlanAssistance;
 using Alegeus.Hackaton.PlanAssistance.Apis;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSignalR();
+builder.Services.AddSingleton(new AssistantService());
 
 var app = builder.Build();
 
@@ -17,8 +20,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-//app.AddSampleApi();
+app.AddChat();
+app.AddChatHub();
 app.AddChat();
 app.Run();
-
-

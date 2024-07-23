@@ -42,8 +42,8 @@ public record EmployerDto(string Name);
 
 public record QualifyingEventTypeDto(
     string QualifyingEventName,
-    DateTime EffectiveStartDate,
-    DateTime EffectiveEndDate,
+    DateTime? EffectiveStartDate,
+    DateTime? EffectiveEndDate,
     QualifyingBeneficiaryUnit QualifyingBeneficiaryUnit);
 
 public record RateTableSetDto(

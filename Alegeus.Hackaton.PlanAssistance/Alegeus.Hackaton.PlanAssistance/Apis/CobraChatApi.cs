@@ -51,6 +51,30 @@ public static class CobraChatApi
         //            ])
         //    ]);
 
+        //var guid1 = Guid.NewGuid();
+        //var guid2 = Guid.NewGuid();
+        //var openEnrollment = new OpenEnrollmentDto(
+        //    [],
+        //    new(
+        //        new(new("Termination - Voluntary", null, null, QualifyingBeneficiaryUnit.EmployeeSpouseAndDependents)),
+        //        null,
+        //        new(
+        //            new("Benson", "Cody", "342332423", "", "", new(1975, 8, 13), GenderEnum.Male, null),
+        //            RelationshipToEmployeeEnum.Employee),
+        //        [
+        //            new(BenefitType.Medical, new(2024, 7, 31), new(2024, 8, 1), new(2026, 1, 31))
+        //        ],
+        //        new(){
+        //            new(guid1, new("Benson", "Marsha", "", "", "", new(1980, 1, 23), GenderEnum.Female, null), true),
+        //            new(guid2, new("Benson", "Sammy", "", "", "", new(2015, 1, 5), GenderEnum.Male, null), true)
+        //        },
+        //        [
+        //            new(new(0m, "", null, 0m), true, [guid1, guid2])
+        //        ],
+        //        new()));
+
+        //var json2 = JsonSerializer.Serialize(openEnrollment,
+        //    new JsonSerializerOptions { WriteIndented = true, Converters = { new JsonStringEnumConverter() } });
         //var json1 = JsonSerializer.Serialize(testPlan,
         //    new JsonSerializerOptions { WriteIndented = true, Converters = { new JsonStringEnumConverter() } });
 

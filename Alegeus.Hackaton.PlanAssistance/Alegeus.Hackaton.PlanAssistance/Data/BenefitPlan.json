@@ -1,0 +1,19 @@
+{
+    "AdminId": "T01271",
+    "PlanKey": "114",
+    "PlanId": "GRACEFSA",
+    "EmployerId": "RSCWCCER1",
+    "AccountType": "FLX",
+    "PlanStartDate": "20240914",
+    "PlanEndDate": "20240927",
+    "ByPassAutoDeposit": "0",
+    "MaxTransactionAmount": "-1.00",
+    "PlanDesingKey": "114",
+    "Status": "1",
+    "InsertDate": "2024-07-16 23:00:27.577",
+    "InsertUserId": "29",
+    "UpdateDate": "2024-07-16 23:00:22.253",
+    "UpdateUserId": "29",
+    "ExtensionDate": "20241027",
+    "PlanOptions": "0"
+}

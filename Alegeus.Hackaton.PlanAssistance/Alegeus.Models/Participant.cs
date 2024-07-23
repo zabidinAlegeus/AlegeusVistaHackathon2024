@@ -6,8 +6,8 @@ namespace Alegeus.Models
 {
     public class Participant
     {
-        public string TpaId { get; set; }
-        public string EmprId { get; set; }
+        public string AdminId { get; set; }
+        public string EmployerId { get; set; }
         public int CardholderKey { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }

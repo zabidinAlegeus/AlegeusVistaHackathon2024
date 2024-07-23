@@ -24,5 +24,7 @@ public class ChatHub : Hub
         return Task.CompletedTask;
     //    var aiResponse = await _assistant.ChatWithAssistant(message);
     //    await Clients.All.SendAsync("ReceiveMessage", aiResponse);
+        //var aiResponse = await _assistant.ChatWithAssistant(AssistantService.HardcodedAdministratorId, message);
+        //await Clients.All.SendAsync("ReceiveMessage", aiResponse);
     }
 }

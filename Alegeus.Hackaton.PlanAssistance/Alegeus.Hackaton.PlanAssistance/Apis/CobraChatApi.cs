@@ -4,6 +4,8 @@ namespace Alegeus.Hackaton.PlanAssistance.Apis;
 
 public static class CobraChatApi
 {
+    private const string ProductName = "Cobra";
+
     public static async Task AddCobraChats(this WebApplication app)
     {
         //var plan = new Fixture().Create<PlanDto>();
@@ -20,7 +22,7 @@ public static class CobraChatApi
                 [FromServices] AssistantService assistant,
                 [FromBody] ChatDto dto) =>
             {
-                var result = await assistant.ChatWithAssistant(dto.Message, planJson);
+                var result = await assistant.ChatWithAssistant(ProductName, AssistantService.HardcodedAdministratorId, dto.Message, planJson);
                 return string.Join(Environment.NewLine, result); // TODO: just last response
             })
             .WithName("COBRA Admin Plan Chat")
@@ -31,10 +33,21 @@ public static class CobraChatApi
                 [FromServices] AssistantService assistant,
                 [FromBody] ChatDto dto) =>
             {
-                var result = await assistant.ChatWithAssistant(dto.Message, openEnrollmentJson);
+                var result = await assistant.ChatWithAssistant(ProductName, AssistantService.HardcodedAdministratorId, dto.Message, openEnrollmentJson);
                 return string.Join(Environment.NewLine, result); // TODO: just last response
             })
             .WithName("COBRA Participant Open Enrollment Chat")
             .WithOpenApi();
+    }
+
+    public static async Task AddClearChatSessionCobra(this WebApplication app)
+    {
+        app.MapPost("/cobra-chat-clear-session", async (
+                [FromServices] AssistantService assistant) =>
+        {
+            assistant.ClearSession(ProductName, AssistantService.HardcodedAdministratorId);
+        })
+        .WithName("COBRA Chat Clear Session")
+        .WithOpenApi();
     }
 }

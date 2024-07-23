@@ -12,7 +12,6 @@ The `WcaBenefitPlan` class represents a WCA benefit plan within the Alegeus syst
 - `PlanEndDate`: The end date of the benefit plan.
 - `ByPassAutoDeposit`: Indicates whether auto-deposit is bypassed for this plan.
 - `MaxTransactionAmount`: The maximum transaction amount allowed for the plan.
-- `PlanDesingKey`: The key associated with the plan design.
 - `Status`: The current status of the benefit plan.
 - `ExtensionDate`: The extension date for the plan (if applicable).
 - `PlanOptions`: Additional options or details related to the plan.

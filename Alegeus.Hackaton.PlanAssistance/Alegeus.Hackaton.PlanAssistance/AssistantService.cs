@@ -9,6 +9,8 @@ public class AssistantService
     {
         var result = new List<string>();
 
+        query = await this.PrependPlanJsonToUserQuery(query);
+
         var endpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT") ?? throw new ArgumentNullException("AZURE_OPENAI_ENDPOINT");
         var key = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY") ?? throw new ArgumentNullException("AZURE_OPENAI_API_KEY");
         var assistantID = Environment.GetEnvironmentVariable("AZURE_OPENAI_ASSISTANT_ID") ?? throw new ArgumentNullException("AZURE_OPENAI_ASSISTANT_ID");
@@ -59,5 +61,11 @@ public class AssistantService
         }
 
         return result;
+    }
+
+    private async Task<string> PrependPlanJsonToUserQuery(string query)
+    {
+        var planJson = await File.ReadAllTextAsync(".\\Data\\BenefitPlan.json");
+        return planJson + " " + query;
     }
 }

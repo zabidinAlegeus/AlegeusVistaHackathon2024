@@ -14,6 +14,8 @@ public class ChatHub : Hub
 {
     public async Task SendMessage(string message)
     {
+        var assistantService = new AssistantService();
+        var result = await assistantService.ChatWithAssistant(message);
         await Clients.All.SendAsync("ReceiveMessage", message);
     }
 }

@@ -48,8 +48,14 @@ public class AssistantService(IMemoryCache cache)
         while (run.Status == RunStatus.Queued
             || run.Status == RunStatus.InProgress);
 
+        if (run.Status == RunStatus.Failed)
+        {
+            result.Add($"Execution failed. {run.LastError.Code}: {run.LastError.Message}");
+            return result;
+        }
+
         // Get the messages
-        PageableList<ThreadMessage> messagesPage = await client.GetMessagesAsync(threadId);
+        PageableList<ThreadMessage> messagesPage = client.GetMessages(threadId);
         IReadOnlyList<ThreadMessage> messages = messagesPage.Data;
 
         // Note: messages iterate from newest to oldest, with the messages[0] being the most recent

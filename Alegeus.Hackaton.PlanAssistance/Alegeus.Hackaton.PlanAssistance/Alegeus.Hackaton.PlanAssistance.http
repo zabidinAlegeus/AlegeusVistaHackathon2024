@@ -43,12 +43,3 @@ Content-Type: application/json
 {
   "message": "What is the current world population? Additionally, please draw a line chart that shows the world population by year since 2000."
 }
-
-###
-# Draw a diagram.
-POST http://localhost:59029/wca-chat
-Content-Type: application/json
-
-{
-  "message": "Please draw a line chart that shows the human population by year since 2000."
-}

@@ -5,37 +5,34 @@ The `CobraPlan` class contains the plan settings and rates for COBRA and Direct 
 
 ## Fields
 - `PlanId`: A guid representing the unique identifier for the COBRA Plan.
+- `Employer`: Contains information about the employer that sponsors the plan.
+- `CarrierName`: The carrier that provides the plan.
+- `PlanName`: The name of the plan offered by the carrier.
+- `BenefitType`: The type of benefit the plan covers.
+- `CarrierAdminFeePercentage`: todo.
+- `CarrierAdminFee`: todo.
+- `DisabilityExtensionCarrierAdminFee`: todo.
+- `DisabilityExtensionCarrierAdminFeePercentage`: todo.
+- `DisabilityExtensionEmployerAdminFee`: todo.
+- `DisabilityExtensionTpaAdminFeePercentage`: todo.
+- `EmployerAdminFee`: todo.
+- `EmployerAdminFeePercentage`: todo.
+- `StartOfPlanYearDay`: todo.
+- `StartOfPlanYearMonth`: todo.
+- `TpaAdminFee`: todo.
+- `TpaAdminFeePercentage`: todo.
+- `LossOfCoverageDetermination`: todo.
+- `ProrationDetermination`: todo.
+- `EffectiveStartDate`: todo.
+- `EffectiveEndDate`: todo.
+- `IsCobraPlan`: todo.
+- `DirectBillTypes`: todo.
+- `RateTableSets`: todo.
 
 // TODO: Write markdown for DTOs
 using Alegeus.Models;
 
 namespace Alegeus.Hackaton.PlanAssistance.Models;
-
-public record PlanDto(
-    Guid PlanId,
-    EmployerDto Employer,
-    string CarrierName,
-    string PlanName,
-    BenefitType BenefitType,
-    decimal CarrierAdminFeePercentage,
-    decimal CarrierAdminFee,
-    decimal DisabilityExtensionCarrierAdminFee,
-    decimal DisabilityExtensionCarrierAdminFeePercentage,
-    decimal DisabilityExtensionEmployerAdminFee,
-    decimal DisabilityExtensionTpaAdminFeePercentage,
-    decimal EmployerAdminFee,
-    decimal EmployerAdminFeePercentage,
-    int StartOfPlanYearDay,
-    int StartOfPlanYearMonth,
-    decimal TpaAdminFee,
-    decimal TpaAdminFeePercentage,
-    LossOfCoverageDetermination LossOfCoverageDetermination,
-    ProrationDeterminationEnum ProrationDetermination,
-    DateTime EffectiveStartDate,
-    DateTime EffectiveEndDate,
-    bool IsCobraPlan,
-    List<DirectBillTypeDto> DirectBillTypes,
-    List<RateTableSetDto> RateTableSets);
 
 public record DirectBillTypeDto(
     string Name,

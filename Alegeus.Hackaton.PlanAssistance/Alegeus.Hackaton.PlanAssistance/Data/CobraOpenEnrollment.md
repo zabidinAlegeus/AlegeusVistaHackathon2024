@@ -4,7 +4,8 @@
 The `CobraOpenEnrollment` class contains information about a participant's COBRA or Direct Billing Benefit Account, as well as plans that are available to them during open enrollment. The Coverage includes details about which participants are enrolled on what plans at what times.
 
 ## Fields
-- `PlanId`: A guid representing the unique identifier for the COBRA Plan.
+- `AvailablePlans`: Contains information about plans being offered to the participant during open enrollment.
+- `Coverage`: Contains information about the participant's benefit account. Includes information about which family members are on which plans and what times.
 
 // TODO: Write markdown for these dtos.
 public record OpenEnrollmentDto(

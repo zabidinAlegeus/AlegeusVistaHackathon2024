@@ -297,6 +297,8 @@ public enum BenefitType
 
 public static class CobraChatApi
 {
+    private const string ProductName = "Cobra";
+
     public static async Task AddCobraChat(this WebApplication app)
     {
         var planJson = await File.ReadAllTextAsync(".\\Data\\CobraPlan.json"); ;
@@ -304,11 +306,21 @@ public static class CobraChatApi
                 [FromServices] AssistantService assistant,
                 [FromBody] ChatDto dto) =>
             {
-                var result = await assistant.ChatWithAssistant(dto.Message, planJson);
-                return string.Join(Environment.NewLine, result);
+                var result = await assistant.ChatWithAssistant(ProductName, AssistantService.HardcodedAdministratorId, dto.Message, planJson);
+                return string.Join(Environment.NewLine, result); // TODO: just last response
             })
             .WithName("COBRA Chat")
             .WithOpenApi();
+    }
 
+    public static async Task AddClearChatSessionCobra(this WebApplication app)
+    {
+        app.MapPost("/cobra-chat-clear-session", async (
+                [FromServices] AssistantService assistant) =>
+        {
+            assistant.ClearSession(ProductName, AssistantService.HardcodedAdministratorId);
+        })
+        .WithName("COBRA Chat Clear Session")
+        .WithOpenApi();
     }
 }

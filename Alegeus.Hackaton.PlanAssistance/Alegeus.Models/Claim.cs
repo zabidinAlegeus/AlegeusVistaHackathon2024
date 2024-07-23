@@ -6,7 +6,7 @@ namespace Alegeus.Models
 {
     public class Claim
     {
-        public string TpaId { get; set; }
+        public string AdminId { get; set; }
         public string EmployerId { get; set; }
         public string TransactionDate { get; set; }
         public string ServiceStartDate { get; set; }

@@ -1,9 +1,8 @@
 [
   {
     "AdminId": "T01271",
-    "PlanKey": "114",
+    "PlanKey": 114,
     "PlanId": "GRACEFSA",
-    "EmployerId": "RSCWCCER1",
     "AccountType": "FLX",
     "PlanStartDate": "20240914",
     "PlanEndDate": "20240927",
@@ -21,9 +20,8 @@
   },
   {
     "AdminId": "T01271",
-    "PlanKey": "115",
+    "PlanKey": 115,
     "PlanId": "HSA",
-    "EmployerId": "ZAWCCER1",
     "AccountType": "HSA",
     "PlanStartDate": "20240101",
     "PlanEndDate": "20241231",

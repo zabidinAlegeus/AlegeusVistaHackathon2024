@@ -15,7 +15,7 @@ public static class WcaChatApi
                 [FromBody] ChatDto dto) =>
         {
             var result = await assistant.ChatWithAssistant(dto.Message, planJson);
-            return result;
+            return string.Join(Environment.NewLine, result); // TODO: just last response
         })
         .WithName("WCA Chat")
         .WithOpenApi();

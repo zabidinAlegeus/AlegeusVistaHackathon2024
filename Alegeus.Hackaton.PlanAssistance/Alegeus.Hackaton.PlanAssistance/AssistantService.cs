@@ -23,7 +23,6 @@ public class AssistantService
             query);
 
 
-
         // Run the thread
         ThreadRun run = await client.CreateRunAsync(
             thread.Value.Id,
@@ -47,7 +46,7 @@ public class AssistantService
         foreach (ThreadMessage threadMessage in messages.Reverse())
         {
             Console.Write($"{threadMessage.CreatedAt:yyyy-MM-dd HH:mm:ss} - {threadMessage.Role,10}: ");
-            foreach (MessageContent contentItem in threadMessage.ContentItems)
+            foreach (var contentItem in threadMessage.ContentItems)
             {
                 if (contentItem is MessageTextContent textItem)
                 {

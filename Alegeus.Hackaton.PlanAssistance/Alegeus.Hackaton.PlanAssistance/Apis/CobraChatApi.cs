@@ -305,7 +305,7 @@ public static class CobraChatApi
                 [FromBody] ChatDto dto) =>
             {
                 var result = await assistant.ChatWithAssistant(dto.Message, planJson);
-                return result.Last();
+                return string.Join(Environment.NewLine, result);
             })
             .WithName("COBRA Chat")
             .WithOpenApi();

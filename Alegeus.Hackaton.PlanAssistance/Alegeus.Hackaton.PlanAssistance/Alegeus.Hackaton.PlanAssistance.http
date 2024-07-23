@@ -4,7 +4,7 @@ GET {{Alegeus.Hackaton.PlanAssistance_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
-POST http://localhost:59029/chat
+POST http://localhost:59029/wca-chat
 Content-Type: application/json
 
 {
@@ -12,7 +12,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:59029/chat
+POST http://localhost:59029/wca-chat
 Content-Type: application/json
 
 {

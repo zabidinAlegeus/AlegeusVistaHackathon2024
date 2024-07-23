@@ -22,6 +22,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.AddChat();
+await app.AddChat();
 app.AddChatHub();
+await app.AddCobraChat();
 app.Run();

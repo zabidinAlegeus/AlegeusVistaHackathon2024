@@ -9,11 +9,11 @@ public class AssistantService(IMemoryCache cache)
     private const string CachePrefix = "PlanAssistant-";
     public const string HardcodedAdministratorId = "tpa001";
 
-    public async Task<IList<string>> ChatWithAssistant(string administratorId, string query)
+    public async Task<IList<string>> ChatWithAssistant(string administratorId, string query, string planJson)
     {
         var result = new List<string>();
 
-        query = await this.PrependPlanJsonToUserQuery(query);
+        query = $"{planJson} {query}";
 
         var endpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT") ?? throw new ArgumentNullException("AZURE_OPENAI_ENDPOINT");
         var key = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY") ?? throw new ArgumentNullException("AZURE_OPENAI_API_KEY");
@@ -68,11 +68,5 @@ public class AssistantService(IMemoryCache cache)
         }
 
         return result;
-    }
-
-    private async Task<string> PrependPlanJsonToUserQuery(string query)
-    {
-        var planJson = await File.ReadAllTextAsync(".\\Data\\BenefitPlan.json");
-        return planJson + " " + query;
     }
 }

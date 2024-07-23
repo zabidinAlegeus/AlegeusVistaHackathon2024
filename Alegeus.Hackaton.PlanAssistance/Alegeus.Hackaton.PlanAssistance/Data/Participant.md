@@ -9,8 +9,6 @@ The `Participant` class represents claims related to participant transactions wi
 - `LastName`: The last name of the claimant.
 - `FirstName`: The first name of the claimant.
 - `SocSecNum`: Depending on the CardholderTypeCde, this will be the employee ID or the dependent ID ...
-- `NamePrefix`: The prefix for the claimant’s name. Valid values are Mr., Mrs., Ms., Dr., and Rev.
-- `Initial`: The middle initial of the claimant.
 - `CardholderTypeCde`: Cardholder Type Cde: Employee = 1, Dependent = 2
 - `CardNum`: Card Proxy Number
 - `Claims`: List of claims that the participant has submitted on their participant portal or mobile app

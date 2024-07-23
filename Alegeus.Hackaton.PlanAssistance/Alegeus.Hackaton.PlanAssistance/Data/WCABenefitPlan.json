@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "AdminId": "T01271",
     "PlanKey": 114,
@@ -7,13 +7,8 @@
     "PlanStartDate": "20240914",
     "PlanEndDate": "20240927",
     "ByPassAutoDeposit": "0",
-    "MaxTransactionAmount": "-1.00",
-    "PlanDesingKey": "114",
+    "MaxTransactionAmount": "15000.00",
     "Status": "1",
-    "InsertDate": "2024-07-16 23:00:27.577",
-    "InsertUserId": "29",
-    "UpdateDate": "2024-07-16 23:00:22.253",
-    "UpdateUserId": "29",
     "ExtensionDate": "20241027",
     "PlanOptions": "0",
     "CustomDescription": "Grace Period FSA"
@@ -27,12 +22,7 @@
     "PlanEndDate": "20241231",
     "ByPassAutoDeposit": "0",
     "MaxTransactionAmount": "10000.00",
-    "PlanDesingKey": "114",
     "Status": "1",
-    "InsertDate": "2024-07-16 23:00:27.577",
-    "InsertUserId": "29",
-    "UpdateDate": "2024-07-16 23:00:22.253",
-    "UpdateUserId": "29",
     "ExtensionDate": "20241027",
     "PlanOptions": "0",
     "CustomDescription": "Grace Period FSA"

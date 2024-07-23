@@ -1,6 +1,10 @@
-@Alegeus.Hackaton.PlanAssistance_HostAddress = http://localhost:5239
+@Alegeus.Hackaton.PlanAssistance_HostAddress = http://localhost:59029
 
 GET {{Alegeus.Hackaton.PlanAssistance_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+POST http://localhost:59029/chat
+Content-Type: application/json
+
+"I have a plan with these parameters:\r\n- plan_yr_start_dte: 07/14/2024\r\n- plan_yr_end_dte: 07/14/2025\r\n- bypass_auto_deposit: true\r\n\r\nIs auto-deposit bypassed in this plan?"

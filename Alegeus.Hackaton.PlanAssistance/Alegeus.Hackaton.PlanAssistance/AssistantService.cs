@@ -5,11 +5,11 @@ using Azure.AI.OpenAI.Assistants;
 
 public class AssistantService
 {
-    public async Task<IList<string>> ChatWithAssistant(string query)
+    public async Task<IList<string>> ChatWithAssistant(string query, string planJson)
     {
         var result = new List<string>();
 
-        query = await this.PrependPlanJsonToUserQuery(query);
+        query = $"{planJson} {query}";
 
         var endpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT") ?? throw new ArgumentNullException("AZURE_OPENAI_ENDPOINT");
         var key = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY") ?? throw new ArgumentNullException("AZURE_OPENAI_API_KEY");
@@ -61,11 +61,5 @@ public class AssistantService
         }
 
         return result;
-    }
-
-    private async Task<string> PrependPlanJsonToUserQuery(string query)
-    {
-        var planJson = await File.ReadAllTextAsync(".\\Data\\BenefitPlan.json");
-        return planJson + " " + query;
     }
 }

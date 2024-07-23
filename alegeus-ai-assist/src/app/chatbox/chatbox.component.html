@@ -1,6 +1,18 @@
 <mat-card class="chatbot">
     <mat-card-content>
-        <p>chatbox works!</p>
+        <div class="row">
+            <div class="col">
+                <mat-chip-listbox *ngIf="chatEntries.length > 0">
+                    <div *ngFor="let chatEntry of chatEntries">
+                        <mat-chip class="question" *ngIf="chatEntry.question != ''">{{chatEntry.question}}</mat-chip>
+                        <mat-chip class="response">{{chatEntry.response}}</mat-chip>
+                    </div>
+                    <div *ngIf="showSpinner">
+                        Loading response...
+                        <mat-spinner diameter="30"></mat-spinner>
+                    </div>                    
+                </mat-chip-listbox>
+            </div>
+        </div>
     </mat-card-content>
 </mat-card>
-

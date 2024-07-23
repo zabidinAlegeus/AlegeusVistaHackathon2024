@@ -1,19 +1,5 @@
-.row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    max-width: 100%;
-    max-height: 5vh;
-}
-
 .row button{
     align-self: center;
-}
-
-.col {
-    flex: 1;
-    margin-right: 1em;
-    width: 100%;
 }
 
 .button-col {

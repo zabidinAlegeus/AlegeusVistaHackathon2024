@@ -1,4 +1,6 @@
-﻿namespace Alegeus.Hackaton.PlanAssistance;
+﻿using Alegeus.Hackaton.PlanAssistance.Apis;
+
+namespace Alegeus.Hackaton.PlanAssistance;
 
 using Azure;
 using Azure.AI.OpenAI.Assistants;
@@ -15,7 +17,8 @@ public class AssistantService(IMemoryCache cache)
     {
         var result = new List<string>();
 
-        //query = $"{planJson} {query}";
+        if (product == CobraChatApi.ProductName)
+            query = $"{planJson} {query}";
 
         var endpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT") ?? throw new ArgumentNullException("AZURE_OPENAI_ENDPOINT");
         var key = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY") ?? throw new ArgumentNullException("AZURE_OPENAI_API_KEY");

@@ -1,21 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, UntypedFormControl } from '@angular/forms';
 import { ChatboxService } from '../chatbox/chatbox.service';
-import { firstValueFrom } from 'rxjs';
+import { firstValueFrom, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-submit',
   templateUrl: './submit.component.html',
   styleUrls: ['./submit.component.css']
 })
-export class SubmitComponent {
+export class SubmitComponent implements OnDestroy {
   constructor(private chatboxService: ChatboxService) { }
 
   public submitControl = new UntypedFormControl([]);
+  public responseSubscription: Subscription | undefined;
+  @Input() public chatContentControl: FormControl = new FormControl();
 
-  public async onSubmit(): Promise<void> {
+  public ngOnDestroy(): void {
+    this.responseSubscription?.unsubscribe();
+  }
+
+  public onSubmit(): void {
     const question = this.submitControl.value as string;
-    let response = await firstValueFrom(this.chatboxService.postQuestion(question));
+    this.responseSubscription = this.chatboxService.postQuestion(question).subscribe(data => {
+      this.chatContentControl.setValue(data);
+    });
 
     //TODO: 
     //1. post the user's question in the chatbox component 

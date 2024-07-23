@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-container',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./container.component.css']
 })
 export class ContainerComponent {
-
+  public chatContentControl = new FormControl(['Greetings! How may I assist you today?']);
 }

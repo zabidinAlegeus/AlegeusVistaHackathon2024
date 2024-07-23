@@ -9,7 +9,7 @@ POST http://localhost:59029/wca-chat
 Content-Type: application/json
 
 {
-  "message": "Please list all benefit plans, and describe each using 2-3 sentences each.\r\n"
+  "message": "Please list all benefit plans.\r\n"
 }
 
 ###

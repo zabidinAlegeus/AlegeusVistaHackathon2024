@@ -23,6 +23,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 await app.AddChat();
+await app.AddClearChatSessionWca();
 app.AddChatHub();
 await app.AddCobraChat();
+await app.AddClearChatSessionCobra();
 app.Run();

@@ -4,6 +4,7 @@ GET {{Alegeus.Hackaton.PlanAssistance_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+# First query to start a session/thread
 POST http://localhost:59029/wca-chat
 Content-Type: application/json
 
@@ -12,9 +13,15 @@ Content-Type: application/json
 }
 
 ###
+# Second query to continue an existing session/thread
 POST http://localhost:59029/wca-chat
 Content-Type: application/json
 
 {
   "message": "Could you go into more detail on the first benefit plan please?"
 }
+
+###
+# Reset the session/thread
+POST http://localhost:59029/wca-chat-clear-session
+Content-Type: application/json

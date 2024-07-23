@@ -9,7 +9,7 @@ public class AssistantService(IMemoryCache cache)
     private const string CachePrefix = "PlanAssistant-";
     public const string HardcodedAdministratorId = "tpa001";
 
-    public async Task<IList<string>> ChatWithAssistant(string administratorId, string query, string planJson)
+    public async Task<IList<string>> ChatWithAssistant(string product, string administratorId, string query, string planJson)
     {
         var result = new List<string>();
 
@@ -20,11 +20,11 @@ public class AssistantService(IMemoryCache cache)
         var assistantID = Environment.GetEnvironmentVariable("AZURE_OPENAI_ASSISTANT_ID") ?? throw new ArgumentNullException("AZURE_OPENAI_ASSISTANT_ID");
         var client = new AssistantsClient(new Uri(endpoint), new AzureKeyCredential(key));
 
-        var threadId = cache.Get<string>(CachePrefix + $"{administratorId}");
+        var threadId = cache.Get<string>(this.GetSessionId(product, administratorId));
         var thread = !string.IsNullOrWhiteSpace(threadId) ? await client.GetThreadAsync(threadId) : null;
-        thread ??= await client.CreateThreadAsync();
+        thread = thread?.Value != null ? thread : await client.CreateThreadAsync();
         threadId = thread.Value.Id;
-        cache.Set(CachePrefix + $"{administratorId}", threadId);
+        cache.Set(this.GetSessionId(product, administratorId), threadId);
 
         // Add a user question to the thread
         var message = await client.CreateMessageAsync(
@@ -68,5 +68,15 @@ public class AssistantService(IMemoryCache cache)
         }
 
         return result;
+    }
+
+    public void ClearSession(string product, string administratorId)
+    {
+        cache.Remove(this.GetSessionId(product, administratorId));
+    }
+
+    private string GetSessionId(string product, string administratorId)
+    {
+        return $"{CachePrefix}{product}-{administratorId}";
     }
 }

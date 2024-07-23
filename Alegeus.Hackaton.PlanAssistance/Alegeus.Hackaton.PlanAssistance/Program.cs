@@ -39,6 +39,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors("_allowedSpecificOrigins");
 await app.AddChat();
 await app.AddClearChatSessionWca();
 app.AddChatHub();

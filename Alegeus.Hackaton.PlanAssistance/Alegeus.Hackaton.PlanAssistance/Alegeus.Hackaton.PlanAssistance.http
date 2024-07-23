@@ -7,4 +7,14 @@ Accept: application/json
 POST http://localhost:59029/chat
 Content-Type: application/json
 
-"Please give me a brief summary of my benefit plan in 2-3 sentences.\r\n"
+{
+  "message": "Please give me a brief summary of my benefit plan in 2-3 sentences.\r\n"
+}
+
+###
+POST http://localhost:59029/chat
+Content-Type: application/json
+
+{
+  "message": "Could you go into more detail on the first benefit plan please?"
+}

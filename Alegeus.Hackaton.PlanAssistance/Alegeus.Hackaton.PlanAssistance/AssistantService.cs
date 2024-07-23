@@ -2,10 +2,14 @@
 
 using Azure;
 using Azure.AI.OpenAI.Assistants;
+using Microsoft.Extensions.Caching.Memory;
 
-public class AssistantService
+public class AssistantService(IMemoryCache cache)
 {
-    public async Task<IList<string>> ChatWithAssistant(string query)
+    private const string CachePrefix = "PlanAssistant-";
+    public const string HardcodedAdministratorId = "tpa001";
+
+    public async Task<IList<string>> ChatWithAssistant(string administratorId, string query)
     {
         var result = new List<string>();
 
@@ -16,18 +20,21 @@ public class AssistantService
         var assistantID = Environment.GetEnvironmentVariable("AZURE_OPENAI_ASSISTANT_ID") ?? throw new ArgumentNullException("AZURE_OPENAI_ASSISTANT_ID");
         var client = new AssistantsClient(new Uri(endpoint), new AzureKeyCredential(key));
 
-        var thread = await client.CreateThreadAsync();
+        var threadId = cache.Get<string>(CachePrefix + $"{administratorId}");
+        var thread = !string.IsNullOrWhiteSpace(threadId) ? await client.GetThreadAsync(threadId) : null;
+        thread ??= await client.CreateThreadAsync();
+        threadId = thread.Value.Id;
+        cache.Set(CachePrefix + $"{administratorId}", threadId);
 
         // Add a user question to the thread
         var message = await client.CreateMessageAsync(
-            thread.Value.Id,
+            threadId,
             MessageRole.User,
             query);
 
-
         // Run the thread
         ThreadRun run = await client.CreateRunAsync(
-            thread.Value.Id,
+            threadId,
             new CreateRunOptions(assistantID)
         );
 
@@ -35,13 +42,13 @@ public class AssistantService
         do
         {
             await Task.Delay(TimeSpan.FromMilliseconds(500));
-            run = await client.GetRunAsync(thread.Value.Id, run.Id);
+            run = await client.GetRunAsync(threadId, run.Id);
         }
         while (run.Status == RunStatus.Queued
             || run.Status == RunStatus.InProgress);
 
         // Get the messages
-        PageableList<ThreadMessage> messagesPage = await client.GetMessagesAsync(thread.Value.Id);
+        PageableList<ThreadMessage> messagesPage = await client.GetMessagesAsync(threadId);
         IReadOnlyList<ThreadMessage> messages = messagesPage.Data;
 
         // Note: messages iterate from newest to oldest, with the messages[0] being the most recent

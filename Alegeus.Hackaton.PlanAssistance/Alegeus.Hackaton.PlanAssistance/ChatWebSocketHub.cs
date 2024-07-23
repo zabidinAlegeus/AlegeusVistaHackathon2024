@@ -21,7 +21,7 @@ public class ChatHub : Hub
 
     public async Task SendMessage(string message)
     {
-        var aiResponse = await _assistant.ChatWithAssistant(message);
+        var aiResponse = await _assistant.ChatWithAssistant(AssistantService.HardcodedAdministratorId, message);
         await Clients.All.SendAsync("ReceiveMessage", aiResponse);
     }
 }

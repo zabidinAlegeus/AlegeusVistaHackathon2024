@@ -12,7 +12,7 @@ public static class ChatApi
                 [FromServices] AssistantService assistant,
                 [FromBody] Dto dto) =>
         {
-            var result = await assistant.ChatWithAssistant(dto.Message);
+            var result = await assistant.ChatWithAssistant(AssistantService.HardcodedAdministratorId, dto.Message);
             return result;
         })
         .WithName("Chat")

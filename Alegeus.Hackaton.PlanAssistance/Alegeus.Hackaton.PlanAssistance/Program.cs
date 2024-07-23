@@ -17,7 +17,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.AddSampleApi();
+//app.AddSampleApi();
+app.AddChat();
 app.Run();
 
 

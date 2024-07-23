@@ -12,4 +12,6 @@ The `CobraOpenEnrollment` class contains information about a participant's COBRA
     - `CoverageWindows`: Describes what periods of time different benefits are available to the participant.
     - `Dependent`: The primary participant's dependents. Includes demographic data about the participant. Dependents have a DependentId, which are reference by the plans to keep track of Elections.
     - `InitialElectablePlan`: The plans the primary participant had access to at the time of their qualifying event. References DependentId via CoveredDependentIds property.
+        - TODO 
     - `ElectedPlans`: The plans with which participants have elections. References DependentId via CoveredDependentIds property.
+        - TODO 

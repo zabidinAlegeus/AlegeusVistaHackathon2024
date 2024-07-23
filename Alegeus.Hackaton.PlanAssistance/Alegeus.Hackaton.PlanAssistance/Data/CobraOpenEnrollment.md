@@ -5,7 +5,14 @@ The `CobraOpenEnrollment` class contains information about a participant's COBRA
 
 ## Fields
 - `AvailablePlans`: Contains information about plans being offered to the participant during open enrollment.
-- `Coverage`: Contains information about the participant's benefit account. Includes information about which family members are on which plans and what times.
+- `Coverage`: Contains information about the participant's benefit account. Includes information about which family members are on which plans and what times. The following fields are part of Coverage:
+    - `Cobra`: Describes COBRA specific information about the account. This will be missing if this is a direct billing account.
+    - `DirectBill`: Describes Direct Billing specific information about the account. This will be missing if this is a COBRA account.
+    - `PrimaryParticipant`: Is the account holder. Includes demographic data about the participant.
+    - `CoverageWindows`: Describes what periods of time different benefits are available to the participant.
+    - `Dependent`: The primary participant's dependents. Includes demographic data about the participant. Dependents have a DependentId, which are reference by the plans to keep track of Elections.
+    - `InitialElectablePlan`: The plans the primary participant had access to at the time of their qualifying event.
+    - `ElectedPlans`
 
 // TODO: Write markdown for these dtos.
 public record OpenEnrollmentDto(
@@ -18,8 +25,8 @@ public record CoverageDto(
     PrimaryParticipantDto PrimaryParticipant,
     List<CoverageWindowDto> CoverageWindows,
     List<DependentDto> Dependents,
-    List<InitialElectablePlanDto> InitialElectablePlan,
-    List<ElectedPlanDto> ElectedPlanDto);
+    List<InitialElectablePlanDto> InitialElectablePlans,
+    List<ElectedPlanDto> ElectedPlans);
 
 public record CobraDetailsDto(QualifyingEventTypeDto QualifyingEventType);
 public record DirectBillDetailsDto(DirectBillTypeDto Type);

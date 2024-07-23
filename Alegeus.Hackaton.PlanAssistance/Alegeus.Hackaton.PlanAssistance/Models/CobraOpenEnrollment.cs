@@ -12,14 +12,15 @@ public record CoverageDto(
     PrimaryParticipantDto PrimaryParticipant,
     List<CoverageWindowDto> CoverageWindows,
     List<DependentDto> Dependents,
-    List<InitialElectablePlanDto> InitialElectablePlan,
-    List<ElectedPlanDto> ElectedPlanDto);
+    List<InitialElectablePlanDto> InitialElectablePlans,
+    List<ElectedPlanDto> ElectedPlans);
 
 public record CobraDetailsDto(QualifyingEventTypeDto QualifyingEventType);
 public record DirectBillDetailsDto(DirectBillTypeDto Type);
 public record PrimaryParticipantDto(DemographicsDto Demographics, RelationshipToEmployeeEnum RelationshipToEmployee);
 
 public record CoverageWindowDto(
+    BenefitType BenefitType,
     DateTime LossOfEmployeeCoverageDate,
     DateTime FirstDayOfCoverage,
     DateTime LastPossibleDateOfCoverage);

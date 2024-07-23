@@ -34,19 +34,10 @@
   },
   "CoverageWindows": [
     {
+      "BenefitType": "Medical",
       "LossOfEmployeeCoverageDate": "2024-10-20T07:50:48.3342196",
       "FirstDayOfCoverage": "2026-03-18T07:40:06.8466827",
       "LastPossibleDateOfCoverage": "2025-12-29T11:19:24.5261492"
-    },
-    {
-      "LossOfEmployeeCoverageDate": "2023-11-01T01:53:07.8163785",
-      "FirstDayOfCoverage": "2023-08-15T14:57:20.2359773",
-      "LastPossibleDateOfCoverage": "2024-01-19T02:22:02.7462815"
-    },
-    {
-      "LossOfEmployeeCoverageDate": "2023-12-02T23:00:52.2944544",
-      "FirstDayOfCoverage": "2024-12-05T15:53:31.5008068",
-      "LastPossibleDateOfCoverage": "2023-05-12T23:21:53.9123358"
     }
   ],
   "Dependents": [
@@ -93,7 +84,7 @@
       "IsActive": false
     }
   ],
-  "InitialElectablePlan": [
+  "InitialElectablePlans": [
     {
       "PremiumFactors": {
         "Contribution": 49,
@@ -137,7 +128,7 @@
       ]
     }
   ],
-  "ElectedPlanDto": [
+  "ElectedPlans": [
     {
       "StartDate": "2025-09-10T22:56:07.0105256",
       "EndDate": "2024-05-18T21:29:39.2057053",

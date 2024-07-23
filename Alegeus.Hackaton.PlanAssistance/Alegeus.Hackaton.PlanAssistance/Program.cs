@@ -12,6 +12,23 @@ builder.Services.AddSignalR();
 builder.Services.AddMemoryCache();
 builder.Services.AddSingleton(sp => 
     new AssistantService(sp.GetRequiredService<IMemoryCache>()));
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("_allowedSpecificOrigins",
+        x =>
+        {
+            x.WithOrigins(
+                    "http://localhost:4200",
+                    "http://*.localhost:4200",
+                    "https://localhost:4200",
+                    "https://*.localhost:4200")
+                .SetIsOriginAllowedToAllowWildcardSubdomains()
+                .AllowCredentials()
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+        });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -22,6 +39,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors("_allowedSpecificOrigins");
 await app.AddChat();
 await app.AddClearChatSessionWca();
 app.AddChatHub();

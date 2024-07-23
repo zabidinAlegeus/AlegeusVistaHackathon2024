@@ -1,7 +1,8 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormControl, UntypedFormControl } from '@angular/forms';
 import { ChatboxService } from '../chatbox/chatbox.service';
 import { firstValueFrom, Subscription } from 'rxjs';
+import { MatInput } from '@angular/material/input';
 
 @Component({
   selector: 'app-submit',
@@ -20,9 +21,11 @@ export class SubmitComponent implements OnDestroy {
   }
 
   public onSubmit(): void {
+    this.chatboxService.toggleShowSpinner();
     const question = this.submitControl.value as string;
     this.responseSubscription = this.chatboxService.postQuestion(question).subscribe(data => {
-      this.chatContentControl.setValue(data);
+      this.chatboxService.toggleHideSpinner();
+      this.chatboxService.pushNewChatEntry({ question: question, response: data});
     });
 
     //TODO: 

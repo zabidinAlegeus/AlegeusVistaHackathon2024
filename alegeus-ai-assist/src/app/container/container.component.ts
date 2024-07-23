@@ -7,5 +7,4 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./container.component.css']
 })
 export class ContainerComponent {
-  public chatContentControl = new FormControl(['Greetings! How may I assist you today?']);
 }

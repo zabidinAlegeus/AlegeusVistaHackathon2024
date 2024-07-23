@@ -1,4 +1,5 @@
 using Alegeus.Hackaton.PlanAssistance;
+using Alegeus.Hackaton.PlanAssistance.Apis;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSignalR();
+builder.Services.AddSingleton(new AssistantService());
 
 var app = builder.Build();
 
@@ -19,4 +21,5 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.AddChatHub();
+app.AddChat();
 app.Run();

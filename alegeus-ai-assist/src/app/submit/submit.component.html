@@ -1,0 +1,16 @@
+<form>
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="submit" appearance="outline">
+                <mat-label></mat-label>
+                <input matInput [formControl]="submitControl" placeholder="Type your question here">
+            </mat-form-field>
+        </div>
+
+        <div class="button-col">
+            <button mat-fab (click)="onSubmit()">
+                <mat-icon>arrow_forward</mat-icon>
+            </button>
+        </div>
+    </div>
+</form>

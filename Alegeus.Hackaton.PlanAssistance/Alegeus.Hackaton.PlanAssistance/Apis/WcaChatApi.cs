@@ -10,14 +10,14 @@ public static class WcaChatApi
 
     public static async Task AddChat(this WebApplication app)
     {
-        var planJson = await File.ReadAllTextAsync(".\\Data\\BenefitPlan.json");;
+        var planJson = await File.ReadAllTextAsync(".\\Data\\WCABenefitPlan.json");
 
         app.MapPost("/wca-chat", async (
                 [FromServices] AssistantService assistant,
                 [FromBody] ChatDto dto) =>
         {
             var result = await assistant.ChatWithAssistant(ProductName, AssistantService.HardcodedAdministratorId, dto.Message, planJson);
-            return string.Join(Environment.NewLine, result); // TODO: just last response
+            return result.LastOrDefault(x => !string.IsNullOrWhiteSpace(x)) ?? "No response generated.";
         })
         .WithName("WCA Chat")
         .WithOpenApi();

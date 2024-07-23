@@ -2,4 +2,9 @@
 
 var test = new ClientHub();
 await test.ConnectAsync();
-await test.SendAsync("test message");
+
+while (true)
+{
+    var message = Console.ReadLine()!;
+    await test.SendAsync(message);
+}

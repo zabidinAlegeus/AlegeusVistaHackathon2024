@@ -11,11 +11,17 @@ public class ClientHub
 
     public async Task ConnectAsync()
     {
+        _hub.On<string>("ReceiveMessage", (message) =>
+        {
+            Console.WriteLine($"Received '{message}'");
+        });
+
         await _hub.StartAsync();
     }
 
     public async Task SendAsync(string message)
     {
+        Console.WriteLine($"Sending '{message}'");
         await _hub.InvokeAsync(nameof(ChatHub.SendMessage), message);
     }
 }

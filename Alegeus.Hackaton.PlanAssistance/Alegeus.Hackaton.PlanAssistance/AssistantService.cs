@@ -1,9 +1,12 @@
-﻿namespace Alegeus.Hackaton.PlanAssistance;
+﻿using Alegeus.Hackaton.PlanAssistance.Apis;
+
+namespace Alegeus.Hackaton.PlanAssistance;
 
 using Azure;
 using Azure.AI.OpenAI.Assistants;
 using Microsoft.Extensions.Caching.Memory;
 using OpenAI.Files;
+using System.Web;
 
 public class AssistantService(IMemoryCache cache)
 {
@@ -14,7 +17,8 @@ public class AssistantService(IMemoryCache cache)
     {
         var result = new List<string>();
 
-        //query = $"{planJson} {query}";
+        if (product == CobraChatApi.ProductName)
+            query = $"{planJson} {query}";
 
         var endpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT") ?? throw new ArgumentNullException("AZURE_OPENAI_ENDPOINT");
         var key = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY") ?? throw new ArgumentNullException("AZURE_OPENAI_API_KEY");
@@ -74,9 +78,11 @@ public class AssistantService(IMemoryCache cache)
                 {
                     var imageInfo = await client.GetFileAsync(imageFileContent.FileId);
                     BinaryData imageBytes = await client.GetFileContentAsync(imageFileContent.FileId);
-                    using FileStream stream = File.OpenWrite($"{imageInfo.Value.Filename}.png");
-                    imageBytes.ToStream().CopyTo(stream);
-                    result.Add($"<image: {imageInfo.Value.Filename}.png>");
+                    //using FileStream stream = File.OpenWrite($"{imageInfo.Value.Filename}.png");
+                    //imageBytes.ToStream().CopyTo(stream);
+                    //result.Add($"<img src='{HttpUtility.UrlEncode(imageInfo.Value.Filename)}.png'>");
+                    var image64 = Convert.ToBase64String(imageBytes);
+                    result.Add($"<img src='data:image/png;base64, {image64}'>");
                     Console.WriteLine($"<image: {imageInfo.Value.Filename}.png>");
                 }
 

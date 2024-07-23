@@ -2,6 +2,13 @@
 
 namespace Alegeus.Hackaton.PlanAssistance.Models;
 
+public record AvailablePlanDto(
+    Guid PlanId,
+    string CarrierName,
+    string PlanName,
+    BenefitType BenefitType,
+    List<RateTableItemDto> Items);
+
 public record PlanDto(
     Guid PlanId,
     EmployerDto Employer,
@@ -23,10 +30,12 @@ public record PlanDto(
     LossOfCoverageDetermination LossOfCoverageDetermination,
     ProrationDeterminationEnum ProrationDetermination,
     DateTime EffectiveStartDate,
-    DateTime EffectiveEndDate,
+    DateTime? EffectiveEndDate,
     bool IsCobraPlan,
     List<DirectBillTypeDto> DirectBillTypes,
-    List<RateTableSetDto> RateTableSets);
+    List<RateTableSetDto> RateTableSets,
+    int NumberOfAccounts,
+    int ElectedParticipantCount);
 
 public record DirectBillTypeDto(
     string Name,
@@ -42,8 +51,8 @@ public record EmployerDto(string Name);
 
 public record QualifyingEventTypeDto(
     string QualifyingEventName,
-    DateTime EffectiveStartDate,
-    DateTime EffectiveEndDate,
+    DateTime? EffectiveStartDate,
+    DateTime? EffectiveEndDate,
     QualifyingBeneficiaryUnit QualifyingBeneficiaryUnit);
 
 public record RateTableSetDto(

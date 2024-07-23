@@ -1,0 +1,6 @@
+@Alegeus.Hackaton.PlanAssistance_HostAddress = http://localhost:5239
+
+GET {{Alegeus.Hackaton.PlanAssistance_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

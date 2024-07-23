@@ -11,7 +11,19 @@ The `CobraOpenEnrollment` class contains information about a participant's COBRA
     - `PrimaryParticipant`: Is the account holder. Includes demographic data about the participant.
     - `CoverageWindows`: Describes what periods of time different benefits are available to the participant.
     - `Dependent`: The primary participant's dependents. Includes demographic data about the participant. Dependents have a DependentId, which are reference by the plans to keep track of Elections.
-    - `InitialElectablePlan`: The plans the primary participant had access to at the time of their qualifying event. References DependentId via CoveredDependentIds property.
-        - TODO 
-    - `ElectedPlans`: The plans with which participants have elections. References DependentId via CoveredDependentIds property.
-        - TODO 
+    - `InitialElectablePlan`: The plans the primary participant had access to at the time of their qualifying event.
+        - `Contribution`: How much of a contribution to make for this plan.
+        - `Location`: Locations of the participants for this plan.
+        - `Smoking`: Smoking habit of the participants for this plan.
+        - `CoverageAmount`: How much to cover for this plan.
+        - `DoesCoverPrimaryParticipant`: If the primary participant is electing in the plan.
+        - `CoveredDependentIds`: Describe what dependents have enrolled on this plan. This is an ID that references the DependentId property of the dependent.
+    - `ElectedPlans`: The plans with which participants have elections. References DependentId via CoveredDependentIds property. 
+        - `StartDate`: The first day the participant is electing in for this plan. Often 1/1.
+        - `EndDate`: The last day the participant is electing in for this plan. Often 12/31.
+        - `Contribution`: How much of a contribution to make for this plan.
+        - `Location`: Locations of the participants for this plan.
+        - `Smoking`: Smoking habit of the participants for this plan.
+        - `CoverageAmount`: How much to cover for this plan.
+        - `DoesCoverPrimaryParticipant`: If the primary participant is electing in the plan.
+        - `CoveredDependentIds`: Describe what dependents have enrolled on this plan. This is an ID that references the DependentId property of the dependent.

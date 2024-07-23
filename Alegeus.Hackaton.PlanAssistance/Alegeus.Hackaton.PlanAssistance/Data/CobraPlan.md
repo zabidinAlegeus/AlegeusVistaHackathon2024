@@ -28,6 +28,7 @@ The `CobraPlan` class contains the plan settings and rates for COBRA and Direct 
 - `IsCobraPlan`: todo.
 - `DirectBillTypes`: todo.
 - `RateTableSets`: todo.
+  - `RateTableItems`: todo.
 
 // TODO: Write markdown for DTOs
 using Alegeus.Models;

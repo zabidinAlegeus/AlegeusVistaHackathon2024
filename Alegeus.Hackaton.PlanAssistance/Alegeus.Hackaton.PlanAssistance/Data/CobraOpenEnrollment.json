@@ -1,0 +1,193 @@
+{
+  "Cobra": {
+    "QualifyingEventType": {
+      "QualifyingEventName": "QualifyingEventName01f4ca22-0132-40ac-9f54-7557b985ec87",
+      "EffectiveStartDate": "2024-07-17T20:59:51.2472428",
+      "EffectiveEndDate": "2023-07-18T15:54:20.3907265",
+      "QualifyingBeneficiaryUnit": "RetireeSpouseAndDependents"
+    }
+  },
+  "DirectBill": {
+    "Type": {
+      "Name": "Name05eacbb0-2bcc-49e9-847c-df33c604ae60",
+      "BillingPeriodFrequency": "Monthly",
+      "Active": true,
+      "GracePeriod": 220,
+      "InitialPaymentPeriod": 18,
+      "ElectionPeriod": 212,
+      "PremiumDetermination": "IndividuallyRated",
+      "UsePlanAdministrationFees": false
+    }
+  },
+  "PrimaryParticipant": {
+    "Demographics": {
+      "LastName": "LastNamed72c1c5f-3c3b-4971-aba0-c8c3cf01849a",
+      "FirstName": "FirstName2a7bad78-c974-4f76-b0ad-2683e4d94c88",
+      "Ssn": "Ssn6a6776e9-f8ba-4332-8086-bb80f8f00463",
+      "NamePrefix": "NamePrefixdc7297f8-924d-4d2d-af17-2dda40e195a7",
+      "Initial": "Initial2fe1df01-ed09-4919-a0de-fca17b3ca5ac",
+      "DateOfBirth": "2024-08-28T19:26:28.4981828",
+      "Gender": "Female",
+      "IsTobaccoUser": false
+    },
+    "RelationshipToEmployee": "Employee"
+  },
+  "CoverageWindows": [
+    {
+      "LossOfEmployeeCoverageDate": "2024-10-20T07:50:48.3342196",
+      "FirstDayOfCoverage": "2026-03-18T07:40:06.8466827",
+      "LastPossibleDateOfCoverage": "2025-12-29T11:19:24.5261492"
+    },
+    {
+      "LossOfEmployeeCoverageDate": "2023-11-01T01:53:07.8163785",
+      "FirstDayOfCoverage": "2023-08-15T14:57:20.2359773",
+      "LastPossibleDateOfCoverage": "2024-01-19T02:22:02.7462815"
+    },
+    {
+      "LossOfEmployeeCoverageDate": "2023-12-02T23:00:52.2944544",
+      "FirstDayOfCoverage": "2024-12-05T15:53:31.5008068",
+      "LastPossibleDateOfCoverage": "2023-05-12T23:21:53.9123358"
+    }
+  ],
+  "Dependents": [
+    {
+      "DependentId": "54a9a8c1-414c-489c-a3bb-4d2e8c58eb6e",
+      "Demographics": {
+        "LastName": "LastName1e1df201-d005-4652-8594-08c5a45dbfa2",
+        "FirstName": "FirstNamef95dcd7e-02fc-48a3-b695-7bbd93d5b408",
+        "Ssn": "Ssn91774597-f4cd-42a2-ad75-7cd8eaf5cecb",
+        "NamePrefix": "NamePrefix72674f26-3c7a-410a-a586-0e7e5fcc0451",
+        "Initial": "Initial3d29f77a-e3d4-49b5-94ff-80e68fc67d67",
+        "DateOfBirth": "2025-03-02T15:17:41.7014031",
+        "Gender": "SomethingElse",
+        "IsTobaccoUser": true
+      },
+      "IsActive": false
+    },
+    {
+      "DependentId": "0c1bd545-51b6-435b-9dde-d55b5bf632d7",
+      "Demographics": {
+        "LastName": "LastName5af5826a-f674-4fd3-bf33-1bb007fb6c28",
+        "FirstName": "FirstNamede4a335a-f8bc-404e-bb57-16a16c9a42ff",
+        "Ssn": "Ssnd8962dcb-3b35-486f-8329-ac37f92c0ead",
+        "NamePrefix": "NamePrefix0dcc5706-42fe-4aed-801f-86e0aaa8d6c0",
+        "Initial": "Initiale58e8efb-a29f-4fd7-b0e2-2a9c43b1880a",
+        "DateOfBirth": "2025-03-23T11:25:14.7619505",
+        "Gender": "Male",
+        "IsTobaccoUser": true
+      },
+      "IsActive": false
+    },
+    {
+      "DependentId": "072c3847-5c61-4f46-9168-e3482495c538",
+      "Demographics": {
+        "LastName": "LastName65420865-7918-4c41-ab36-d4fc10831b1e",
+        "FirstName": "FirstName0d6309d6-29cf-44fa-81d5-7feb33e961ff",
+        "Ssn": "Ssn00dd2473-3159-412a-bc45-16538a5c062e",
+        "NamePrefix": "NamePrefix506c9690-0571-4b7a-8241-04d0279e9954",
+        "Initial": "Initial6a619f06-225a-4e6a-8027-7520aae97df6",
+        "DateOfBirth": "2026-06-18T00:51:10.334279",
+        "Gender": "Female",
+        "IsTobaccoUser": true
+      },
+      "IsActive": false
+    }
+  ],
+  "InitialElectablePlan": [
+    {
+      "PremiumFactors": {
+        "Contribution": 49,
+        "Location": "Location1e71b9f4-3fd6-4635-b8a5-04ff0033d0e3",
+        "Smoking": "TwoOrMoreSmoker",
+        "CoverageAmount": 191
+      },
+      "DoesCoverPrimaryParticipant": false,
+      "CoveredDependentIds": [
+        "ce76d1f9-94df-4598-ae2f-4b91f23a7aa0",
+        "d39b6070-a62d-4558-89c8-576adc2ee8a2",
+        "e28cb381-165b-4d5d-8469-d2510ddf46c6"
+      ]
+    },
+    {
+      "PremiumFactors": {
+        "Contribution": 155,
+        "Location": "Location6d1f0dfd-b3f5-45ff-b1e2-41bee6ed7a81",
+        "Smoking": "TwoOrMoreSmoker",
+        "CoverageAmount": 79
+      },
+      "DoesCoverPrimaryParticipant": false,
+      "CoveredDependentIds": [
+        "2b525d4d-148b-4def-aa77-4a4513eb9043",
+        "e9676198-fdc3-4e7a-bba1-b24d8c443eb3",
+        "8b7fb705-fcb7-4551-a7dd-c785b3bd223b"
+      ]
+    },
+    {
+      "PremiumFactors": {
+        "Contribution": 136,
+        "Location": "Location740a44ba-ea3e-48a5-bce1-d40bb0c457a4",
+        "Smoking": "TwoOrMoreSmoker",
+        "CoverageAmount": 95
+      },
+      "DoesCoverPrimaryParticipant": false,
+      "CoveredDependentIds": [
+        "40d413c6-8201-41c0-a1d0-50790a4fa3c7",
+        "00fd09cd-b503-455b-b22a-223dfb44631e",
+        "9f37a4d2-43c8-4ea9-a5be-fe97932799e0"
+      ]
+    }
+  ],
+  "ElectedPlanDto": [
+    {
+      "StartDate": "2025-09-10T22:56:07.0105256",
+      "EndDate": "2024-05-18T21:29:39.2057053",
+      "PlanId": "ff4cb1a5-8c25-483b-8a9d-b80e6f06137c",
+      "PremiumFactors": {
+        "Contribution": 180,
+        "Location": "Location4d05e7a4-deb8-4629-a0a9-33f316ef07c0",
+        "Smoking": "TwoOrMoreSmoker",
+        "CoverageAmount": 233
+      },
+      "DoesCoverPrimaryParticipant": false,
+      "CoveredDependentIds": [
+        "8d3e78ab-fa09-4302-a0bb-f0a25f8ad2a5",
+        "0bf39906-f16f-4f23-8f00-32c0a56f7805",
+        "ae6a00a0-fc23-4a02-a8a3-6373be8b3413"
+      ]
+    },
+    {
+      "StartDate": "2025-01-20T06:41:10.2389806",
+      "EndDate": "2025-05-28T15:00:18.0861441",
+      "PlanId": "03cffab0-1d68-476e-ace8-db6e8862010a",
+      "PremiumFactors": {
+        "Contribution": 162,
+        "Location": "Location005073cf-f3cc-4830-9cd9-eb73400ebaf2",
+        "Smoking": "TwoOrMoreSmoker",
+        "CoverageAmount": 13
+      },
+      "DoesCoverPrimaryParticipant": false,
+      "CoveredDependentIds": [
+        "f283e5e8-0ee0-41fa-8871-779e05d924fb",
+        "49e2009c-9dbb-4b9c-aa56-fa0eca3e9be4",
+        "5faa804f-b768-4c2d-8545-189c2266b832"
+      ]
+    },
+    {
+      "StartDate": "2025-12-01T05:35:12.5479025",
+      "EndDate": "2025-07-10T15:57:10.0144036",
+      "PlanId": "3886891a-6541-4471-90f6-06ef13654158",
+      "PremiumFactors": {
+        "Contribution": 168,
+        "Location": "Locationcb039aea-90a9-4243-9500-3d7424bef0f4",
+        "Smoking": "TwoOrMoreSmoker",
+        "CoverageAmount": 19
+      },
+      "DoesCoverPrimaryParticipant": false,
+      "CoveredDependentIds": [
+        "5524a5c2-ffd7-4100-9d61-fd65676832c4",
+        "87d5a6ff-953f-4092-8743-1088ee38d777",
+        "23e858f7-6ea4-486e-b6ed-93f350a08bdd"
+      ]
+    }
+  ]
+}

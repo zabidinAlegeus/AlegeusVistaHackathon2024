@@ -17,8 +17,8 @@ export class ContainerComponent implements OnInit {
     this.userControl.setValue('Admin');
 
     this.userControl?.valueChanges.subscribe((value) => {
-      this.chatboxService.toggleClearChat();
-      this.chatboxService.clearSession().subscribe(x => x);
+      //this.chatboxService.toggleClearChat();
+      //this.chatboxService.clearSession().subscribe(x => x);
       this.chatboxService.setSelectedUser(value as string);
     });
   }

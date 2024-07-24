@@ -26,12 +26,7 @@ export class SubmitComponent implements OnDestroy {
     this.responseSubscription = this.chatboxService.postQuestion(question).subscribe(data => {
       this.chatboxService.toggleHideSpinner();
       this.chatboxService.pushNewChatEntry({ question: question, response: data});
+      this.submitControl.setValue(null);
     });
-
-    //TODO: 
-    //1. post the user's question in the chatbox component 
-    //2. send an event notifitying the chatbox that there is a new response
-    //3. push that response to the chatbox
-
   }
 }

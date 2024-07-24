@@ -184,42 +184,6 @@
                 "UploadDate": "2024-07-23"
               }
             ]
-          },
-          {
-            "AdminId": "T01271",
-            "EmployerId": "RSCWCCER1",
-            "TransactionDate": "2024-01-23",
-            "ServiceStartDate": "2024-01-23",
-            "ServiceEndDate": "2024-01-23",
-            "Type": "Medical",
-            "AcctTypeCde": "FLX",
-            "AcctTypeDesc": "Grace Period FSA",
-            "PlanStartDate": "2024-01-01",
-            "PlanEndDate": "2024-12-31",
-            "Status": "Active",
-            "TxnAmt": 55,
-            "TxnAmtDenied": 0,
-            "TxnAmtPending": 0,
-            "TxnCde": 5,
-            "TxnMsg": "Transaction Successful",
-            "TxnAmtRefund": 0,
-            "TxnOriginCde": 6,
-            "TxnOptions": 7,
-            "CardHolderDisplay": true,
-            "ProviderId": "PROV789",
-            "ProviderDesc": "Healthcare Provider",
-            "HasReceipt": true,
-            "ReceiptExpired": false,
-            "ReceiptsInfo": [
-              {
-                "AdminId": "T01271",
-                "FileKey": 9,
-                "DocId": "DOC101",
-                "DocDisplayName": "Medical Receipt",
-                "OriginalFileName": "receipt.pdf",
-                "UploadDate": "2024-07-23"
-              }
-            ]
           }
         ]
       },

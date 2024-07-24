@@ -12,7 +12,7 @@
                         </mat-card>
                         <mat-card [ngStyle]="{'background-color': '#fcfceb'}" class="response">
                             <mat-card-content>
-                                {{chatEntry.response}}
+                                <markdown [data]="chatEntry.response">{{chatEntry.response}}</markdown>
                             </mat-card-content>
                         </mat-card>
                     </div>

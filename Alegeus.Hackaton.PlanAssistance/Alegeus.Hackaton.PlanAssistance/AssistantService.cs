@@ -6,12 +6,19 @@ using Azure;
 using Azure.AI.OpenAI.Assistants;
 using Microsoft.Extensions.Caching.Memory;
 using OpenAI.Files;
+using System.Runtime.CompilerServices;
 using System.Web;
 
-public class AssistantService(IMemoryCache cache)
+public class AssistantService
 {
     private const string CachePrefix = "PlanAssistant-";
     public const string HardcodedAdministratorId = "tpa001";
+    IMemoryCache cache;
+
+    public AssistantService(IMemoryCache cache)
+    {
+        this.cache = cache;
+    }
 
     public async Task<IList<string>> ChatWithAssistant(string product, string administratorId, string query, string planJson)
     {
@@ -24,6 +31,9 @@ public class AssistantService(IMemoryCache cache)
         var key = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY") ?? throw new ArgumentNullException("AZURE_OPENAI_API_KEY");
         var assistantID = Environment.GetEnvironmentVariable("AZURE_OPENAI_ASSISTANT_ID") ?? throw new ArgumentNullException("AZURE_OPENAI_ASSISTANT_ID");
         var client = new AssistantsClient(new Uri(endpoint), new AzureKeyCredential(key));
+
+        //await this.UnlinkAndDeleteAllFiles();
+        //await this.UploadFiles();
 
         var threadId = cache.Get<string>(this.GetSessionId(product, administratorId));
         var thread = !string.IsNullOrWhiteSpace(threadId) ? await client.GetThreadAsync(threadId) : null;
@@ -92,6 +102,45 @@ public class AssistantService(IMemoryCache cache)
         }
 
         return result;
+    }
+
+    public async Task UploadFiles()
+    {
+        var endpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT") ?? throw new ArgumentNullException("AZURE_OPENAI_ENDPOINT");
+        var key = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY") ?? throw new ArgumentNullException("AZURE_OPENAI_API_KEY");
+        var assistantID = Environment.GetEnvironmentVariable("AZURE_OPENAI_ASSISTANT_ID") ?? throw new ArgumentNullException("AZURE_OPENAI_ASSISTANT_ID");
+        var client = new AssistantsClient(new Uri(endpoint), new AzureKeyCredential(key));
+        var agentFiles = await client.GetFilesAsync();
+        var filesToUpload = Directory.GetFiles(@".\Data");
+        foreach (var file in filesToUpload)
+        {
+            if (!file.Contains("Cobra", StringComparison.OrdinalIgnoreCase))
+            {
+                var matchingAgentFile = agentFiles.Value.FirstOrDefault(af => af.Filename.Equals(file, StringComparison.OrdinalIgnoreCase));
+                if (matchingAgentFile == null)
+                {
+                    using var fileStream = new FileStream(file, FileMode.Open);
+                    var newAgentFile = await client.UploadFileAsync(fileStream, Azure.AI.OpenAI.Assistants.OpenAIFilePurpose.Assistants);
+                    await client.LinkAssistantFileAsync(assistantID, newAgentFile.Value.Id);
+                    Console.WriteLine($"Uploaded assistant file {newAgentFile.Value.Filename}.");
+                }
+            }
+        }
+    }
+
+    public async Task UnlinkAndDeleteAllFiles()
+    {
+        var endpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT") ?? throw new ArgumentNullException("AZURE_OPENAI_ENDPOINT");
+        var key = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY") ?? throw new ArgumentNullException("AZURE_OPENAI_API_KEY");
+        var assistantID = Environment.GetEnvironmentVariable("AZURE_OPENAI_ASSISTANT_ID") ?? throw new ArgumentNullException("AZURE_OPENAI_ASSISTANT_ID");
+        var client = new AssistantsClient(new Uri(endpoint), new AzureKeyCredential(key));
+        var agentFiles = client.GetAssistantFiles(assistantID);
+        foreach (var agentFile in agentFiles.Value)
+        {
+            await client.UnlinkAssistantFileAsync(assistantID, agentFile.Id);
+            await client.DeleteFileAsync(agentFile.Id);
+            Console.WriteLine($"Deleted assistant file {agentFile.Id}");
+        }
     }
 
     public void ClearSession(string product, string administratorId)

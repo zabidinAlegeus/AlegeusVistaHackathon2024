@@ -20,4 +20,19 @@
     <ProjectReference Include="..\Alegeus.Models\Alegeus.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Data\Claim.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\Employer.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\Participant.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\WCABenefitPlan.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

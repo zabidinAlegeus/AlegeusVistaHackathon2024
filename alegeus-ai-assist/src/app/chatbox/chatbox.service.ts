@@ -15,6 +15,7 @@ export class ChatboxService {
     public showSpinner$ = this.showSpinner.asObservable();
     private hideSpinner = new Subject<void>();
     public hideSpinner$ = this.hideSpinner.asObservable();
+    private selectedUser = 'Admin';
 
     public toggleShowSpinner(): void {
         this.showSpinner.next();
@@ -24,8 +25,20 @@ export class ChatboxService {
         this.hideSpinner.next();
     }
 
+    public getSelectedUser(): string {
+        return this.selectedUser;
+    }
+
+    public setSelectedUser(user: string): void {
+        this.selectedUser = user;
+    }
+
     public postQuestion(request: string): Observable<string> {
-        return this.httpClient.post(this.API_URL + 'cobra-participant-open-enrollment-chat', { message: request }, {responseType: 'text'});
+        if (this.selectedUser == 'COBRA Participant') {
+            return this.httpClient.post(this.API_URL + 'cobra-participant-open-enrollment-chat', { message: request }, {responseType: 'text'});
+        } else {
+            return this.httpClient.post(this.API_URL + 'wca-chat', { message: this.selectedUser + ': ' + request }, {responseType: 'text'});
+        }        
     }
 
     public getChatEntries(): IChatEntry[] {

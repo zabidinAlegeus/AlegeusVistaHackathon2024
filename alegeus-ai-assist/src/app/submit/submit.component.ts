@@ -1,8 +1,7 @@
 import { Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormControl, UntypedFormControl } from '@angular/forms';
 import { ChatboxService } from '../chatbox/chatbox.service';
-import { firstValueFrom, Subscription } from 'rxjs';
-import { MatInput } from '@angular/material/input';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-submit',

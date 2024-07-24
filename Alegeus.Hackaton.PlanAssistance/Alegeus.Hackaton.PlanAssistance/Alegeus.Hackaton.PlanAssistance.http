@@ -5,11 +5,11 @@ Accept: application/json
 
 ###
 # First query to start a session/thread
-POST http://localhost:59029/wca-chat
+POST https://localhost:49181/wca-chat
 Content-Type: application/json
 
 {
-  "message": "Please list all of my benefit plans that are linked to an employer.\r\n"
+  "message": "How many participants are registered under that plan? "
 }
 
 ###

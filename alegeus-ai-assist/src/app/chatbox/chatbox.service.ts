@@ -41,6 +41,14 @@ export class ChatboxService {
         }        
     }
 
+    public clearSession(): Observable<any> {
+        if (this.selectedUser == 'COBRA Participant') {
+            return this.httpClient.post(this.API_URL + 'cobra-participant-open-enrollment-chat', '');
+        } else {
+            return this.httpClient.post(this.API_URL + 'wca-chat', '');
+        }        
+    }
+
     public getChatEntries(): IChatEntry[] {
         return this.chatEntries;
     }

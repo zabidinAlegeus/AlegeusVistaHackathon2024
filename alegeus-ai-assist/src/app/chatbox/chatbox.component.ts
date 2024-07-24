@@ -18,6 +18,6 @@ export class ChatboxComponent implements OnInit {
     this.chatEntries = this.chatboxService.getChatEntries();
     this.chatboxService.showSpinner$.subscribe(() => this.showSpinner = true);
     this.chatboxService.hideSpinner$.subscribe(() => this.showSpinner = false);
-    this.chatboxService.clearChat$.subscribe(() => this.chatEntries =  [{ question: '', response: 'Greetings! How may I assist you today?'}]);
+    //this.chatboxService.clearChat$.subscribe(() => this.chatEntries =  [{ question: '', response: 'Greetings! How may I assist you today?'}]);
   }
 }

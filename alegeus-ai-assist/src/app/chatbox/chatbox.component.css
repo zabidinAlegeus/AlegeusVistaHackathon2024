@@ -13,3 +13,7 @@
     max-width: fit-content;
     margin-left: 7vh;
 }
+
+::ng-deep mat-card {
+    margin-bottom: 0;
+}
